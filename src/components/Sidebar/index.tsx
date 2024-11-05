@@ -10,7 +10,8 @@ import {
   FileText,
 } from 'lucide-react'
 import { SidebarIcon } from './SidebarIcon'
-import { cv } from '../../utils'
+
+import { cv } from '@/utils'
 
 interface SidebarProps {
   activeSection: string

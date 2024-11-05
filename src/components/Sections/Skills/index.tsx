@@ -1,6 +1,7 @@
 import { Hash } from 'lucide-react'
-import { SKILLS } from '../../../utils/constants'
 import { SkillCard } from './SkillCard'
+
+import { SKILLS } from '@/utils/constants'
 
 export const Skills = () => {
   return (

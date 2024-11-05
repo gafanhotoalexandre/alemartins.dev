@@ -1,7 +1,8 @@
 import { Hash } from 'lucide-react'
-import { PROJECTS } from '../../../utils/constants'
 import { ProjectCard } from './ProjectCard'
 import { ProjectDetails } from './ProjectDetails'
+
+import { PROJECTS } from '@/utils/constants'
 
 interface ProjectsProps {
   activeProject: number
