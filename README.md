@@ -1,50 +1,98 @@
-# React + TypeScript + Vite
+# Alexandre Martins | Portfólio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Banner do Projeto](/public/banner.png)
 
-Currently, two official plugins are available:
+Meu portfólio profissional desenvolvido com React & TypeScript, apresentando meus projetos, habilidades e experiências como Desenvolvedor Full Stack.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Tecnologias
 
-## Expanding the ESLint configuration
+Este projeto foi desenvolvido com as seguintes tecnologias:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- React
+- TypeScript
+- Tailwind CSS
+- Lucide React (ícones)
+- EmailJS
 
-- Configure the top-level `parserOptions` property like this:
+## 📋 Funcionalidades
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+- **Seção Sobre**: Apresentação profissional e chamada para ação
+- **Portfólio**: Exibição de projetos em destaque com descrições detalhadas
+- **Habilidades**: Lista de tecnologias e ferramentas categorizadas
+- **Contato**: Formulário de contato para propostas e networking
+- **Design Responsivo**: Interface adaptável para todos os dispositivos
+<!-- - **Animações Suaves**: Transições e interações fluidas -->
+- **UI Moderna**: Interface escura com destaque em tons de violeta
+
+## 🎯 Layout
+
+O layout do projeto foi desenvolvido com foco em:
+
+- Interface moderna e minimalista
+- Navegação intuitiva através de sidebar
+- Paleta de cores escura com destaques em violeta
+- Seções bem definidas e organizadas
+
+## 💻 Pré-requisitos
+
+Antes de começar, verifique se você possui os seguintes requisitos:
+
+- Node.js 18+
+- npm ou yarn
+
+## 🔧 Instalação
+
+1. Clone o repositório
+
+```bash
+git clone https://github.com/gafanhotoalexandre/alemartins.dev.git
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+2. Entre no diretório do projeto
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```bash
+cd alemartins.dev
 ```
+
+3. Instale as dependências
+
+```bash
+npm install
+# ou
+yarn
+```
+
+4. Inicie o servidor de desenvolvimento
+
+```bash
+npm run dev
+# ou
+yarn dev
+```
+
+5. Acesse `http://localhost:5173` no seu navegador
+<!--
+
+## 🤝 Contribuições
+
+Contribuições são sempre bem-vindas! Para contribuir:
+
+1. Faça um fork do projeto
+2. Crie uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
+3. Faça commit das suas alterações (`git commit -m 'Add: AmazingFeature'`)
+4. Faça push para a branch (`git push origin feature/AmazingFeature`)
+5. Abra um Pull Request
+
+## 📝 Licença
+
+Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes. -->
+
+## 📬 Contato
+
+Alexandre Martins - [LinkedIn](https://www.linkedin.com/in/alemartins-lima/)
+
+Link do projeto: [https://github.com/gafanhotoalexandre/alemartins.dev](https://github.com/gafanhotoalexandre/alemartins.dev)
+
+---
+
+⌨️ com ❤️ por [Alexandre Martins](https://github.com/gafanhotoalexandre) 😊
