@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Toaster } from 'sonner'
 
 import { Sidebar } from './components/Sidebar'
 import { About } from './components/Sections/About'
@@ -40,6 +41,8 @@ export const Portfolio = () => {
           )}
         </div>
       </main>
+
+      <Toaster richColors />
     </div>
   )
 }

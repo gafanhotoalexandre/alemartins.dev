@@ -1,5 +1,7 @@
 import { FormEvent, useState } from 'react'
 import emailjs from '@emailjs/browser'
+import { toast } from 'sonner'
+import { LoaderCircle } from 'lucide-react'
 
 export const ContactForm = () => {
   const [name, setName] = useState('')
@@ -18,7 +20,8 @@ export const ContactForm = () => {
       !import.meta.env.VITE_EMAILJS_PUBLIC_KEY
     ) {
       console.error('Variáveis de ambiente do EmailJS não configuradas')
-      alert('Erro na configuração do formulário de contato')
+      // alert('Erro na configuração do formulário de contato')
+      toast.error('Erro na configuração do formulário de contato')
       setIsSubmitting(false)
       return
     }
@@ -37,7 +40,18 @@ export const ContactForm = () => {
         import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       )
 
-      alert('Mensagem enviada com sucesso!')
+      // alert('Mensagem enviada com sucesso!')
+      toast.success('Mensagem enviada com sucesso!', {
+        description: new Date().toLocaleDateString('pt-br', {
+          weekday: 'long',
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric',
+          hour: 'numeric',
+          minute: 'numeric',
+        }),
+      })
+
       setName('')
       setEmail('')
       setMessage('')
@@ -88,7 +102,13 @@ export const ContactForm = () => {
         disabled={isSubmitting}
         className="w-full py-3 bg-violet-600 text-white rounded-lg hover:bg-violet-700 transition-colors shadow-lg shadow-violet-500/25 disabled:opacity-50 disabled:cursor-not-allowed"
       >
-        {isSubmitting ? 'Enviando...' : 'Enviar Mensagem'}
+        {isSubmitting ? (
+          <span className="flex gap-2 items-center justify-center animate-pulse">
+            <LoaderCircle size={20} className="animate-spin" /> Enviando...
+          </span>
+        ) : (
+          'Enviar Mensagem'
+        )}
       </button>
     </form>
   )
