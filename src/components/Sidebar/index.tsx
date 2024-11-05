@@ -63,6 +63,8 @@ export const Sidebar = ({
           onClick={() => setActiveSection('contact')}
         />
       </div>
+
+      {/* social links */}
       <div className="mt-auto flex flex-col gap-6">
         <a
           href={cv}
@@ -88,7 +90,7 @@ export const Sidebar = ({
           <Linkedin size={20} />
         </a>
         <a
-          href="mailto:alexandrevmartinsdelima@gmail.com"
+          href="mailto:hello@alemartins.dev.br"
           className="text-slate-500 hover:text-violet-400 transition-colors"
         >
           <Mail size={20} />
