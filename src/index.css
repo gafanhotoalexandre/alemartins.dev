@@ -92,6 +92,16 @@
   }
 }
 
+@keyframes progressBar {
+  0% {
+    transform: scaleX(0);
+  }
+
+  100% {
+    transform: scaleX(1);
+  }
+}
+
 .animate-float {
   animation: float-gentle 4s ease-in-out infinite;
 }
