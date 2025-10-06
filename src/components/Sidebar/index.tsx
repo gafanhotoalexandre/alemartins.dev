@@ -11,7 +11,7 @@ import {
 } from 'lucide-react'
 import { SidebarIcon } from './SidebarIcon'
 
-import { cv } from '@/utils'
+import { cv2 } from '@/utils'
 
 interface SidebarProps {
   activeSection: string
@@ -67,7 +67,7 @@ export const Sidebar = ({
       {/* social links */}
       <div className="mt-auto flex flex-col gap-6">
         <a
-          href={cv}
+          href={cv2}
           download
           className="text-slate-500 hover:text-violet-400 transition-colors"
         >

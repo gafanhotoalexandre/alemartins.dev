@@ -20,7 +20,7 @@ export const About = ({ setActiveSection }: AboutProps) => {
             </h1>
             <p className="text-lg lg:text-xl text-slate-400 max-w-2xl mx-auto lg:mx-0">
               Especializado em criar experiências digitais excepcionais com
-              React e Spring Boot. Focado em código limpo e soluções escaláveis.
+              React e .NET. Focado em código limpo e soluções escaláveis.
             </p>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">

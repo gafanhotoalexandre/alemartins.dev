@@ -1,18 +1,18 @@
 export const PROJECTS = [
   {
-    title: 'PixelVelvet',
+    title: 'Desculp.ai',
     description:
-      'Aplicação web de transformação de imagens utilizando IA. Oferece recursos como redimensionamento inteligente, remoção de objetos e ajuste de cores, integrado com Cloudinary AI e sistema de pagamentos.',
+      'Aplicação fullstack divertida que utiliza inteligência artificial para gerar desculpas criativas e personalizadas para diferentes situações do cotidiano. Desenvolvida durante o programa de residência em TIC 20 do Capacita Brasil/C-JOVEM, integrando frontend em React com backend Node.js.',
     stack: [
-      'Next.js',
+      'React',
       'TypeScript',
-      'MongoDB',
-      'Tailwind CSS',
-      'Clerk',
-      'Stripe',
+      'Vite',
+      'TailwindCSS',
+      'Zustand',
+      'Zod',
+      'Axios',
     ],
-    github: 'https://github.com/gafanhotoalexandre/pixel-velvet',
-    demo: 'https://pixel-velvet.vercel.app/',
+    github: 'https://github.com/gafanhotoalexandre/desculpai-web',
   },
   {
     title: 'OrçaWeb',
@@ -21,13 +21,6 @@ export const PROJECTS = [
     stack: ['Next.js', 'TypeScript', 'DrizzleORM', 'Tailwind CSS', 'Clerk'],
     github: 'https://github.com/gafanhotoalexandre/orcaweb-pro',
     demo: 'https://orcaweb-pro.vercel.app/',
-  },
-  {
-    title: 'Shorts Synth',
-    description:
-      'Ferramenta inovadora que utiliza IA para gerar resumos automáticos de vídeos Shorts do YouTube, simplificando a extração de informações-chave do conteúdo.',
-    stack: ['TypeScript', 'Vite', 'HTML', 'CSS'],
-    github: 'https://github.com/gafanhotoalexandre/shorts-synth',
   },
   {
     title: 'SimpleBank API',
@@ -53,10 +46,10 @@ export const SKILLS = [
   },
   {
     category: 'Backend',
-    items: ['Spring Boot', 'Java', 'Kotlin', 'Laravel', 'PHP'],
+    items: ['ASP.NET Core', 'C#', 'Node.js', 'TypeScript'],
   },
   {
     category: 'Ferramentas',
-    items: ['Git', 'Docker', 'VS Code', 'IntelliJ'],
+    items: ['Git', 'Docker', 'VS Code', 'Visual Studio'],
   },
 ]
