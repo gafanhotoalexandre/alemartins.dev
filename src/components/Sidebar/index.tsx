@@ -11,7 +11,7 @@ import {
 } from 'lucide-react'
 import { SidebarIcon } from './SidebarIcon'
 
-import { dotnet_curriculum } from '@/utils'
+import { dotnet_curriculum, favicon } from '@/utils'
 
 interface SidebarProps {
   activeSection: string
@@ -33,7 +33,7 @@ export const Sidebar = ({
         onMouseEnter={() => setShowTooltip(true)}
         onMouseLeave={() => setShowTooltip(false)}
       >
-        <Braces className="text-white" size={24} />
+        <img src={favicon} alt="Logo" />
         {showTooltip && (
           <div className="absolute -right-32 top-1/2 -translate-y-1/2 bg-slate-800 text-white px-3 py-1.5 rounded-lg text-sm whitespace-nowrap">
             alemartins.dev
@@ -54,6 +54,11 @@ export const Sidebar = ({
         />
         <SidebarIcon
           icon={<Briefcase size={20} />}
+          active={activeSection === 'experience'}
+          onClick={() => setActiveSection('experience')}
+        />
+        <SidebarIcon
+          icon={<Braces size={20} />}
           active={activeSection === 'skills'}
           onClick={() => setActiveSection('skills')}
         />

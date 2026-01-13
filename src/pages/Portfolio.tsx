@@ -6,6 +6,7 @@ import { About } from '../components/Sections/About'
 import { Projects } from '../components/Sections/Projects'
 import { Skills } from '../components/Sections/Skills'
 import { Contact } from '../components/Sections/Contact'
+import { Experience } from '../components/Sections/Experience'
 
 export const Portfolio = () => {
   const [activeProject, setActiveProject] = useState(0)
@@ -35,6 +36,8 @@ export const Portfolio = () => {
               )}
 
               {activeSection === 'skills' && <Skills />}
+
+              {activeSection === 'experience' && <Experience />}
 
               {activeSection === 'contact' && <Contact />}
             </section>
