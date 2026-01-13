@@ -1,5 +1,5 @@
 import {
-  Terminal,
+  Braces,
   User,
   Code,
   Briefcase,
@@ -11,7 +11,7 @@ import {
 } from 'lucide-react'
 import { SidebarIcon } from './SidebarIcon'
 
-import { cv2 } from '@/utils'
+import { dotnet_curriculum } from '@/utils'
 
 interface SidebarProps {
   activeSection: string
@@ -33,7 +33,7 @@ export const Sidebar = ({
         onMouseEnter={() => setShowTooltip(true)}
         onMouseLeave={() => setShowTooltip(false)}
       >
-        <Terminal className="text-white" size={24} />
+        <Braces className="text-white" size={24} />
         {showTooltip && (
           <div className="absolute -right-32 top-1/2 -translate-y-1/2 bg-slate-800 text-white px-3 py-1.5 rounded-lg text-sm whitespace-nowrap">
             alemartins.dev
@@ -67,7 +67,7 @@ export const Sidebar = ({
       {/* social links */}
       <div className="mt-auto flex flex-col gap-6">
         <a
-          href={cv2}
+          href={dotnet_curriculum}
           download
           className="text-slate-500 hover:text-violet-400 transition-colors"
         >
