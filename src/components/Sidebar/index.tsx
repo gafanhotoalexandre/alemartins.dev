@@ -46,26 +46,31 @@ export const Sidebar = ({
           icon={<User size={20} />}
           active={activeSection === 'about'}
           onClick={() => setActiveSection('about')}
+          tooltip="Sobre"
         />
         <SidebarIcon
           icon={<Code size={20} />}
           active={activeSection === 'projects'}
           onClick={() => setActiveSection('projects')}
+          tooltip="Projetos"
         />
         <SidebarIcon
           icon={<Briefcase size={20} />}
           active={activeSection === 'experience'}
           onClick={() => setActiveSection('experience')}
+          tooltip="Experiência"
         />
         <SidebarIcon
           icon={<Braces size={20} />}
           active={activeSection === 'skills'}
           onClick={() => setActiveSection('skills')}
+          tooltip="Skills"
         />
         <SidebarIcon
           icon={<MessageSquare size={20} />}
           active={activeSection === 'contact'}
           onClick={() => setActiveSection('contact')}
+          tooltip="Contato"
         />
       </div>
 
