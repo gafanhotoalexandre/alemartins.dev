@@ -15,12 +15,19 @@ export const PROJECTS = [
     github: 'https://github.com/gafanhotoalexandre/desculpai-web',
   },
   {
-    title: 'OrçaWeb',
+    title: 'CustomersHub',
     description:
-      'Sistema web de gerenciamento financeiro que permite criar orçamentos principais e sub-orçamentos, com recursos de acompanhamento de gastos, alertas de limite e análises visuais.',
-    stack: ['Next.js', 'TypeScript', 'DrizzleORM', 'Tailwind CSS', 'Clerk'],
-    github: 'https://github.com/gafanhotoalexandre/orcaweb-pro',
-    demo: 'https://orcaweb-pro.vercel.app/',
+      'API para cadastro e gerenciamento de clientes, desenvolvida com foco em boas práticas, código limpo e arquitetura escalável baseada em DDD, CQRS e MediatR. Projeto técnico com .NET 8, Clean Architecture e validações robustas.',
+    stack: [
+      '.NET 8',
+      'ASP.NET Core',
+      'Entity Framework Core',
+      'MediatR',
+      'FluentValidation',
+      'CQRS',
+      'DDD',
+    ],
+    github: 'https://github.com/gafanhotoalexandre/customers-hub',
   },
   {
     title: 'SimpleBank API',
@@ -31,22 +38,34 @@ export const PROJECTS = [
       'https://github.com/gafanhotoalexandre/dio-java-basico/tree/main/simplebank',
   },
   {
-    title: 'Pastelaria API',
+    title: 'Fina',
     description:
-      'API RESTful para gerenciamento de pastelaria, implementando CRUD completo para clientes, pastéis e pedidos. Inclui recursos como soft delete e sistema de notificações por email.',
-    stack: ['PHP', 'Laravel', 'MySQL'],
-    github: 'https://github.com/gafanhotoalexandre/app_pastelaria',
+      'Aplicação Full Stack .NET para controle financeiro pessoal, permitindo o gerenciamento de categorias e transações (entradas e saídas), com arquitetura em camadas e foco em boas práticas. Frontend em Blazor WebAssembly e backend em ASP.NET Minimal API.',
+    stack: [
+      'Blazor WebAssembly',
+      'ASP.NET Minimal API',
+      'Entity Framework Core',
+      'C# 12',
+      '.NET 8',
+    ],
+    github: 'https://github.com/gafanhotoalexandre/finflow',
   },
 ]
 
 export const SKILLS = [
   {
     category: 'Frontend',
-    items: ['ReactJS', 'NextJS', 'TypeScript', 'TailwindCSS'],
+    items: ['ReactJS', 'Angular', 'TypeScript', 'TailwindCSS'],
   },
   {
     category: 'Backend',
-    items: ['ASP.NET Core', 'C#', 'Node.js', 'TypeScript'],
+    items: [
+      'ASP.NET Core',
+      'C#',
+      'DDD',
+      'Minimal APIs',
+      'Entity Framework Core',
+    ],
   },
   {
     category: 'Ferramentas',
