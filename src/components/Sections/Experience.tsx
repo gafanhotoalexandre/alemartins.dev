@@ -70,32 +70,38 @@ export const Experience = () => {
         {EXPERIENCES.map((exp, idx) => (
           <div
             key={idx}
-            className="bg-slate-900/60 rounded-xl p-6 border border-slate-800/60 shadow-lg"
+            className="bg-slate-900/60 rounded-xl p-4 sm:p-6 border border-slate-800/60 shadow-lg flex flex-col gap-2"
           >
-            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2 mb-2">
+            <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between mb-2">
               <div>
-                <h3 className="text-xl font-semibold text-white">{exp.role}</h3>
-                <span className="text-violet-400 font-medium">
+                <h3 className="text-lg sm:text-xl font-medium text-white">
+                  {exp.role}
+                </h3>
+                <span className="text-violet-400 font-medium block sm:inline">
                   {exp.company}
                 </span>
                 {exp.type && (
-                  <span className="ml-2 text-xs text-slate-400">
+                  <span className="ml-0 sm:ml-2 text-xs text-slate-400 block sm:inline">
                     ({exp.type})
                   </span>
                 )}
               </div>
-              <div className="text-sm text-slate-400 text-right md:text-left">
+              <div className="text-xs sm:text-sm text-slate-400 text-left sm:text-right mt-1 sm:mt-0">
                 {exp.period}
-                {exp.location && <span className="ml-2">| {exp.location}</span>}
+                {exp.location && (
+                  <span className="ml-0 sm:ml-2 block sm:inline">
+                    | {exp.location}
+                  </span>
+                )}
               </div>
             </div>
-            <ul className="list-disc pl-5 text-slate-300 space-y-1">
+            <ul className="list-disc pl-5 text-slate-300 space-y-1 text-sm sm:text-base">
               {exp.description.map((item, i) => (
                 <li key={i}>{item}</li>
               ))}
             </ul>
             {exp.techs && (
-              <div className="mt-3 flex flex-wrap gap-2">
+              <div className="mt-2 flex flex-wrap gap-2">
                 {exp.techs.map((tech, i) => (
                   <span
                     key={i}
