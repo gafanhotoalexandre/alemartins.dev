@@ -9,15 +9,15 @@ export const About = ({ setActiveSection }: AboutProps) => {
         {/* Content Column */}
         <div className="space-y-6 lg:space-y-8 text-center lg:text-left">
           <div className="space-y-2">
-            <h2 className="text-violet-500 font-medium">
+            <h1 className="text-violet-500 font-medium">
               Olá, eu sou{' '}
               <code className="text-white rounded-lg hover:bg-violet-700 transition-colors shadow-sm shadow-violet-500/25 px-3 p-1.5">
                 alemartins.dev
               </code>
-            </h2>
-            <h1 className="text-3xl lg:text-5xl font-bold text-white bg-gradient-to-r from-violet-400 to-indigo-400 inline-block text-transparent bg-clip-text">
-              Desenvolvedor Full Stack
             </h1>
+            <h2 className="text-3xl lg:text-5xl font-bold text-white bg-gradient-to-r from-violet-400 to-indigo-400 inline-block text-transparent bg-clip-text">
+              Desenvolvedor Full Stack
+            </h2>
             <p className="text-lg lg:text-xl text-slate-400 max-w-2xl mx-auto lg:mx-0">
               Especializado em criar experiências digitais excepcionais com
               React e .NET. Focado em código limpo e soluções escaláveis.
@@ -55,14 +55,14 @@ export const About = ({ setActiveSection }: AboutProps) => {
                   <img
                     className="w-full h-full rounded-full object-cover"
                     src="https://github.com/gafanhotoalexandre.png"
-                    alt="Alexandre Martins"
+                    alt="Desenvolvedor Alexandre Martins"
                   />
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Elementos decorativos (opcional) */}
+          {/* Elementos decorativos */}
           <div className="absolute -z-10 -inset-4 bg-gradient-to-br from-violet-500/10 to-indigo-500/10 blur-2xl rounded-full" />
         </div>
       </div>
