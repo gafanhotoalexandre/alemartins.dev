@@ -2,7 +2,7 @@
 
 ![Banner do Projeto](/public/banner.png)
 
-Meu portfólio profissional desenvolvido com React & TypeScript, apresentando meus projetos, habilidades e experiências como Desenvolvedor Full Stack.
+Meu portfólio profissional desenvolvido com React e TypeScript, apresentando meus projetos, habilidades, experiências e currículo como Desenvolvedor Full Stack.
 
 ## 🚀 Tecnologias
 
@@ -10,6 +10,7 @@ Este projeto foi desenvolvido com as seguintes tecnologias:
 
 - React
 - TypeScript
+- Vite
 - Tailwind CSS
 - Lucide React (ícones)
 - EmailJS
@@ -17,21 +18,24 @@ Este projeto foi desenvolvido com as seguintes tecnologias:
 ## 📋 Funcionalidades
 
 - **Seção Sobre**: Apresentação profissional e chamada para ação
+- **Experiência**: Linha do tempo das experiências profissionais
 - **Portfólio**: Exibição de projetos em destaque com descrições detalhadas
-- **Habilidades**: Lista de tecnologias e ferramentas categorizadas
-- **Contato**: Formulário de contato para propostas e networking
+- **Habilidades (Skills)**: Lista de tecnologias, frameworks e ferramentas categorizadas
+- **Contato**: Formulário de contato integrado ao EmailJS
+- **Download de Currículo**: Link para baixar o currículo atualizado
 - **Design Responsivo**: Interface adaptável para todos os dispositivos
-<!-- - **Animações Suaves**: Transições e interações fluidas -->
 - **UI Moderna**: Interface escura com destaque em tons de violeta
+- **Acessibilidade**: Tooltips e navegação facilitada
 
 ## 🎯 Layout
 
 O layout do projeto foi desenvolvido com foco em:
 
 - Interface moderna e minimalista
-- Navegação intuitiva através de sidebar
+- Navegação intuitiva através de sidebar fixa
 - Paleta de cores escura com destaques em violeta
 - Seções bem definidas e organizadas
+- Experiência consistente em mobile e desktop
 
 ## 💻 Pré-requisitos
 
@@ -71,21 +75,14 @@ yarn dev
 ```
 
 5. Acesse `http://localhost:5173` no seu navegador
-<!--
 
-## 🤝 Contribuições
+## 🖼️ Imagem Open Graph
 
-Contribuições são sempre bem-vindas! Para contribuir:
+O projeto utiliza uma imagem personalizada para compartilhamento em redes sociais (Open Graph/Twitter), localizada em `/public/og_banner.png`.
 
-1. Faça um fork do projeto
-2. Crie uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
-3. Faça commit das suas alterações (`git commit -m 'Add: AmazingFeature'`)
-4. Faça push para a branch (`git push origin feature/AmazingFeature`)
-5. Abra um Pull Request
+## 📄 Currículo
 
-## 📝 Licença
-
-Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes. -->
+O currículo atualizado pode ser baixado diretamente pelo site, na barra lateral.
 
 ## 📬 Contato
 
