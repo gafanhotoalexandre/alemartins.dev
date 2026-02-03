@@ -11,35 +11,18 @@ import {
 } from 'lucide-react'
 import { SidebarIcon } from './SidebarIcon'
 
-import { dotnet_curriculum, favicon } from '@/utils'
+import { dotnet_fullstack_curriculum, favicon } from '@/utils'
 
 interface SidebarProps {
   activeSection: string
   setActiveSection: (section: string) => void
-  showTooltip: boolean
-  setShowTooltip: (show: boolean) => void
 }
 
-export const Sidebar = ({
-  activeSection,
-  setActiveSection,
-  showTooltip,
-  setShowTooltip,
-}: SidebarProps) => {
+export const Sidebar = ({ activeSection, setActiveSection }: SidebarProps) => {
   return (
     <aside className="fixed top-0 left-0 h-full w-20 bg-slate-900/50 backdrop-blur-sm border-r border-slate-800/50 flex flex-col items-center py-8 gap-8">
-      <div
-        className="relative w-12 h-12 bg-gradient-to-br from-violet-500 to-indigo-500 rounded-xl flex items-center justify-center cursor-pointer group"
-        onMouseEnter={() => setShowTooltip(true)}
-        onMouseLeave={() => setShowTooltip(false)}
-      >
-        <img src={favicon} alt="Logo" />
-        {showTooltip && (
-          <div className="absolute -right-32 top-1/2 -translate-y-1/2 bg-slate-800 text-white px-3 py-1.5 rounded-lg text-sm whitespace-nowrap">
-            alemartins.dev
-            <div className="absolute left-0 top-1/2 -translate-x-1 -translate-y-1/2 border-4 border-transparent border-r-slate-800"></div>
-          </div>
-        )}
+      <div className="relative w-12 h-12 bg-gradient-to-br from-violet-500 to-indigo-500 rounded-xl flex items-center justify-center cursor-pointer">
+        <img src={favicon} alt="Logo" className="w-10 h-10" />
       </div>
       <div className="flex flex-col gap-6">
         <SidebarIcon
@@ -77,8 +60,9 @@ export const Sidebar = ({
       {/* social links */}
       <div className="mt-auto flex flex-col gap-6">
         <a
-          href={dotnet_curriculum}
+          href={dotnet_fullstack_curriculum}
           download
+          aria-label="Baixar currículo"
           className="text-slate-500 hover:text-violet-400 transition-colors"
         >
           <FileText size={20} />
@@ -87,6 +71,7 @@ export const Sidebar = ({
           href="https://github.com/gafanhotoalexandre"
           target="_blank"
           rel="noopener noreferrer"
+          aria-label="Visitar perfil no GitHub"
           className="text-slate-500 hover:text-violet-400 transition-colors"
         >
           <Github size={20} />
@@ -95,12 +80,14 @@ export const Sidebar = ({
           href="https://www.linkedin.com/in/alemartins-lima/"
           target="_blank"
           rel="noopener noreferrer"
+          aria-label="Visitar perfil no LinkedIn"
           className="text-slate-500 hover:text-violet-400 transition-colors"
         >
           <Linkedin size={20} />
         </a>
         <a
           href="mailto:hello@alemartins.dev.br"
+          aria-label="Enviar email"
           className="text-slate-500 hover:text-violet-400 transition-colors"
         >
           <Mail size={20} />

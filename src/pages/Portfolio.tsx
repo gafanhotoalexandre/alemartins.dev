@@ -11,15 +11,12 @@ import { Experience } from '../components/Sections/Experience'
 export const Portfolio = () => {
   const [activeProject, setActiveProject] = useState(0)
   const [activeSection, setActiveSection] = useState('about')
-  const [showTooltip, setShowTooltip] = useState(false)
 
   return (
     <div className="min-h-screen bg-slate-950 text-slate-300">
       <Sidebar
         activeSection={activeSection}
         setActiveSection={setActiveSection}
-        showTooltip={showTooltip}
-        setShowTooltip={setShowTooltip}
       />
 
       <main className="ml-20 p-8">
