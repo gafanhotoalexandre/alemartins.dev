@@ -4,7 +4,7 @@ Aplicação de portfólio desenvolvida com React, TypeScript e Vite para apresen
 
 ## Visão geral
 
-O projeto entrega uma navegação em seções com sidebar fixa, destaque para projetos selecionados, timeline de experiência, resumo técnico, currículo para download e uma seção de contato centrada em canais diretos.
+O projeto entrega uma navegação em seções com sidebar fixa, destaque para projetos selecionados, timeline de experiência, resumo técnico, currículo para download e uma seção de contato centrada em canais diretos e confiáveis.
 
 Observação: a rota pessoal ligada à página LiaLetter existe no repositório, mas não faz parte do escopo técnico principal deste portfólio.
 
@@ -26,7 +26,7 @@ Observação: a rota pessoal ligada à página LiaLetter existe no repositório,
 - Seção de habilidades segmentada por categoria
 - Timeline de experiência profissional
 - Download direto de currículo
-- Seção de contato com canais diretos e confiáveis
+- Seção de contato com email, LinkedIn, GitHub e currículo como canais principais
 - Layout responsivo para desktop e mobile
 
 ## Estrutura principal
@@ -55,6 +55,8 @@ npm install
 ## Variáveis de ambiente
 
 No estado atual do projeto, não há variáveis de ambiente obrigatórias para rodar o portfólio localmente.
+
+A seção de contato foi propositalmente desenhada para não depender de EmailJS, Zoho ou qualquer serviço intermediário de entrega.
 
 ## Scripts
 
@@ -96,6 +98,7 @@ O projeto está preparado para deploy na Vercel.
 - Estado local suficiente para a navegação principal do portfólio
 - Dados estáticos centralizados em constantes para manutenção rápida
 - Contato centrado em canais diretos, sem dependência de serviços frágeis de envio
+- Email direto como CTA principal, com LinkedIn, GitHub e currículo como fallback profissional natural
 - Tema visual fixo escuro, coerente com a identidade atual da interface
 
 ## Upgrade de dependências
@@ -109,6 +112,7 @@ O projeto foi mantido em versões estáveis e conservadoras.
 
 ## Contato
 
+- Email: hello@alemartins.dev.br
 - LinkedIn: https://www.linkedin.com/in/alemartins-lima/
 - GitHub: https://github.com/gafanhotoalexandre
 - Site: https://alemartins.dev.br

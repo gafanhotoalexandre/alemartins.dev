@@ -80,3 +80,54 @@ export const PROFILE = {
   email: 'hello@alemartins.dev.br',
   emailSubject: 'Contato via portfólio',
 } as const
+
+export const CONTACT_CONTENT = {
+  eyebrow: 'Contato direto',
+  title: 'Canais simples, profissionais e confiaveis.',
+  description:
+    'Se voce quer falar sobre oportunidade, projeto freelance ou troca tecnica, o caminho mais rapido aqui e usar email, LinkedIn, GitHub ou o curriculo.',
+  highlightEyebrow: 'Melhor forma de falar comigo',
+  highlightTitle: 'Email e LinkedIn resolvem praticamente tudo aqui.',
+  highlightDescription:
+    'Neste portfolio, prefiro priorizar canais diretos em vez de depender de um fluxo fragil de envio por terceiros.',
+  primaryCta: 'Enviar email',
+  secondaryCta: 'Copiar email',
+} as const
+
+export type ContactMethodId = 'email' | 'linkedin' | 'github' | 'resume'
+
+export type ContactMethod = {
+  id: ContactMethodId
+  title: string
+  description: string
+  cta: string
+  download?: boolean
+}
+
+export const CONTACT_METHODS: ContactMethod[] = [
+  {
+    id: 'email',
+    title: 'Email direto',
+    description: 'Canal mais objetivo para propostas, freelas e oportunidades.',
+    cta: 'Abrir email',
+  },
+  {
+    id: 'linkedin',
+    title: 'LinkedIn',
+    description: 'Bom para conversas profissionais, networking e vagas.',
+    cta: 'Abrir LinkedIn',
+  },
+  {
+    id: 'github',
+    title: 'GitHub',
+    description: 'Onde voce pode ver meu codigo, projetos e historico tecnico.',
+    cta: 'Ver GitHub',
+  },
+  {
+    id: 'resume',
+    title: 'Curriculo',
+    description: 'Resumo direto da minha experiencia, stack e trajetoria.',
+    cta: 'Baixar curriculo',
+    download: true,
+  },
+] as const

@@ -2,6 +2,7 @@ import {
   Copy,
   FileText,
   Github,
+  type LucideIcon,
   Linkedin,
   Mail,
   MoveUpRight,
@@ -9,48 +10,26 @@ import {
 import { toast } from 'sonner'
 
 import { dotnet_fullstack_curriculum } from '@/utils'
-import { PROFILE } from '@/utils/constants'
+import {
+  CONTACT_CONTENT,
+  CONTACT_METHODS,
+  type ContactMethodId,
+  PROFILE,
+} from '@/utils/constants'
 
-type ContactMethod = {
-  title: string
-  description: string
-  href: string
-  cta: string
-  icon: typeof Mail
-  download?: boolean
+const CONTACT_ICONS: Record<ContactMethodId, LucideIcon> = {
+  email: Mail,
+  linkedin: Linkedin,
+  github: Github,
+  resume: FileText,
 }
 
-const CONTACT_METHODS: ContactMethod[] = [
-  {
-    title: 'Email direto',
-    description: 'Canal mais objetivo para propostas, freelas e oportunidades.',
-    href: `mailto:${PROFILE.email}?subject=${encodeURIComponent(PROFILE.emailSubject)}`,
-    cta: 'Enviar email',
-    icon: Mail,
-  },
-  {
-    title: 'LinkedIn',
-    description: 'Bom para conversas profissionais, networking e vagas.',
-    href: PROFILE.linkedinUrl,
-    cta: 'Abrir LinkedIn',
-    icon: Linkedin,
-  },
-  {
-    title: 'GitHub',
-    description: 'Onde você pode ver meu código, projetos e histórico técnico.',
-    href: PROFILE.githubUrl,
-    cta: 'Ver GitHub',
-    icon: Github,
-  },
-  {
-    title: 'Currículo',
-    description: 'Resumo direto da minha experiência, stack e trajetória.',
-    href: dotnet_fullstack_curriculum,
-    cta: 'Baixar currículo',
-    icon: FileText,
-    download: true,
-  },
-]
+const CONTACT_LINKS: Record<ContactMethodId, string> = {
+  email: `mailto:${PROFILE.email}?subject=${encodeURIComponent(PROFILE.emailSubject)}`,
+  linkedin: PROFILE.linkedinUrl,
+  github: PROFILE.githubUrl,
+  resume: dotnet_fullstack_curriculum,
+}
 
 export const ContactMethods = () => {
   const handleCopyEmail = async () => {
@@ -68,14 +47,13 @@ export const ContactMethods = () => {
         <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
           <div className="space-y-3">
             <p className="text-sm font-medium uppercase tracking-[0.24em] text-violet-400">
-              Melhor forma de falar comigo
+              {CONTACT_CONTENT.highlightEyebrow}
             </p>
             <h3 className="text-2xl font-semibold text-white sm:text-3xl">
-              Email e LinkedIn resolvem praticamente tudo aqui.
+              {CONTACT_CONTENT.highlightTitle}
             </h3>
             <p className="max-w-2xl text-slate-400">
-              Para um portfólio, prefiro priorizar canais confiáveis. Assim você
-              consegue falar comigo sem depender de um serviço intermediário.
+              {CONTACT_CONTENT.highlightDescription}
             </p>
           </div>
 
@@ -85,7 +63,7 @@ export const ContactMethods = () => {
               className="inline-flex items-center justify-center gap-2 rounded-xl bg-violet-600 px-5 py-3 font-medium text-white transition-colors hover:bg-violet-500"
             >
               <Mail size={18} />
-              Enviar email
+              {CONTACT_CONTENT.primaryCta}
             </a>
             <button
               type="button"
@@ -93,7 +71,7 @@ export const ContactMethods = () => {
               className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-700 px-5 py-3 font-medium text-slate-200 transition-colors hover:border-violet-500 hover:text-white"
             >
               <Copy size={18} />
-              Copiar email
+              {CONTACT_CONTENT.secondaryCta}
             </button>
           </div>
         </div>
@@ -101,12 +79,12 @@ export const ContactMethods = () => {
 
       <div className="grid gap-4 md:grid-cols-2">
         {CONTACT_METHODS.map((method) => {
-          const Icon = method.icon
+          const Icon = CONTACT_ICONS[method.id]
 
           return (
             <a
               key={method.title}
-              href={method.href}
+              href={CONTACT_LINKS[method.id]}
               target={method.download ? undefined : '_blank'}
               rel={method.download ? undefined : 'noopener noreferrer'}
               download={method.download}
