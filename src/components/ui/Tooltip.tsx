@@ -1,4 +1,4 @@
-import { ReactNode, useState } from 'react'
+import { ReactNode, useEffect, useRef, useState } from 'react'
 
 interface TooltipProps {
   content: ReactNode
@@ -7,13 +7,26 @@ interface TooltipProps {
 
 export const Tooltip = ({ content, children }: TooltipProps) => {
   const [visible, setVisible] = useState(false)
-  let timeout: NodeJS.Timeout
+  const timeoutRef = useRef<number | null>(null)
+
+  useEffect(() => {
+    return () => {
+      if (timeoutRef.current !== null) {
+        window.clearTimeout(timeoutRef.current)
+      }
+    }
+  }, [])
 
   const handleMouseEnter = () => {
-    timeout = setTimeout(() => setVisible(true), 100)
+    timeoutRef.current = window.setTimeout(() => setVisible(true), 100)
   }
+
   const handleMouseLeave = () => {
-    clearTimeout(timeout)
+    if (timeoutRef.current !== null) {
+      window.clearTimeout(timeoutRef.current)
+      timeoutRef.current = null
+    }
+
     setVisible(false)
   }
 

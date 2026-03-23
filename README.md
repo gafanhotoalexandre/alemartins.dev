@@ -1,95 +1,118 @@
 # Alexandre Martins | Portfólio
 
-![Banner do Projeto](/public/banner.png)
+Aplicação de portfólio desenvolvida com React, TypeScript e Vite para apresentar projetos, experiência profissional, habilidades e canais de contato. O foco deste repositório é manter uma base enxuta, estável e fácil de evoluir, adequada para deploy contínuo na Vercel.
 
-Meu portfólio profissional desenvolvido com React e TypeScript, apresentando meus projetos, habilidades, experiências e currículo como Desenvolvedor Full Stack.
+## Visão geral
 
-## 🚀 Tecnologias
+O projeto entrega uma navegação em seções com sidebar fixa, destaque para projetos selecionados, timeline de experiência, resumo técnico, currículo para download e uma seção de contato centrada em canais diretos.
 
-Este projeto foi desenvolvido com as seguintes tecnologias:
+Observação: a rota pessoal ligada à página LiaLetter existe no repositório, mas não faz parte do escopo técnico principal deste portfólio.
 
-- React
+## Stack
+
+- React 18
 - TypeScript
-- Vite
+- Vite 6
 - Tailwind CSS
-- Lucide React (ícones)
-- EmailJS
+- React Router 7
+- Sonner
+- Lucide React
 
-## 📋 Funcionalidades
+## Funcionalidades
 
-- **Seção Sobre**: Apresentação profissional e chamada para ação
-- **Experiência**: Linha do tempo das experiências profissionais
-- **Portfólio**: Exibição de projetos em destaque com descrições detalhadas
-- **Habilidades (Skills)**: Lista de tecnologias, frameworks e ferramentas categorizadas
-- **Contato**: Formulário de contato integrado ao EmailJS
-- **Download de Currículo**: Link para baixar o currículo atualizado
-- **Design Responsivo**: Interface adaptável para todos os dispositivos
-- **UI Moderna**: Interface escura com destaque em tons de violeta
-- **Acessibilidade**: Tooltips e navegação facilitada
+- Apresentação profissional com CTA para projetos e contato
+- Navegação lateral fixa entre seções
+- Lista de projetos em destaque com detalhes dinâmicos
+- Seção de habilidades segmentada por categoria
+- Timeline de experiência profissional
+- Download direto de currículo
+- Seção de contato com canais diretos e confiáveis
+- Layout responsivo para desktop e mobile
 
-## 🎯 Layout
+## Estrutura principal
 
-O layout do projeto foi desenvolvido com foco em:
+- `src/pages/Portfolio.tsx`: casca principal do portfólio
+- `src/components/Sidebar`: navegação lateral e links externos
+- `src/components/Sections`: seções de conteúdo do portfólio
+- `src/utils/constants.ts`: dados estáticos de projetos, skills e perfil
+- `src/components/Sections/Contact`: canais de contato diretos e CTA profissional
 
-- Interface moderna e minimalista
-- Navegação intuitiva através de sidebar fixa
-- Paleta de cores escura com destaques em violeta
-- Seções bem definidas e organizadas
-- Experiência consistente em mobile e desktop
+## Requisitos
 
-## 💻 Pré-requisitos
+- Node.js 20 LTS recomendado
+- npm 10+ recomendado
 
-Antes de começar, verifique se você possui os seguintes requisitos:
+Node 18.18+ ainda é compatível com a toolchain atual, mas Node 20 tende a reduzir atrito com dependências modernas de build e lint.
 
-- Node.js 18+
-- npm ou yarn
-
-## 🔧 Instalação
-
-1. Clone o repositório
+## Instalação
 
 ```bash
 git clone https://github.com/gafanhotoalexandre/alemartins.dev.git
-```
-
-2. Entre no diretório do projeto
-
-```bash
 cd alemartins.dev
-```
-
-3. Instale as dependências
-
-```bash
 npm install
-# ou
-yarn
 ```
 
-4. Inicie o servidor de desenvolvimento
+## Variáveis de ambiente
+
+No estado atual do projeto, não há variáveis de ambiente obrigatórias para rodar o portfólio localmente.
+
+## Scripts
 
 ```bash
 npm run dev
-# ou
-yarn dev
+npm run build
+npm run preview
+npm run lint
 ```
 
-5. Acesse `http://localhost:5173` no seu navegador
+## Desenvolvimento local
 
-## 🖼️ Imagem Open Graph
+Para iniciar em modo desenvolvimento:
 
-O projeto utiliza uma imagem personalizada para compartilhamento em redes sociais (Open Graph/Twitter), localizada em `/public/og_banner.png`.
+```bash
+npm run dev
+```
 
-## 📄 Currículo
+O Vite exibirá a URL local no terminal, normalmente `http://localhost:5173`.
 
-O currículo atualizado pode ser baixado diretamente pelo site, na barra lateral.
+## Build de produção
 
-## 📬 Contato
+```bash
+npm run build
+```
 
-Alexandre Martins - [LinkedIn](https://www.linkedin.com/in/alemartins-lima/)
+Esse script executa primeiro a checagem de TypeScript e depois gera o bundle de produção com Vite.
 
-Link do projeto: [https://github.com/gafanhotoalexandre/alemartins.dev](https://github.com/gafanhotoalexandre/alemartins.dev)
+## Deploy
 
----
+O projeto está preparado para deploy na Vercel.
 
-⌨️ com ❤️ por [Alexandre Martins](https://github.com/gafanhotoalexandre) 😊
+- O arquivo `vercel.json` mantém o rewrite necessário para SPA.
+- O comando de build esperado é `npm run build`.
+
+## Decisões de implementação
+
+- Estrutura simples por seções para evitar overengineering
+- Estado local suficiente para a navegação principal do portfólio
+- Dados estáticos centralizados em constantes para manutenção rápida
+- Contato centrado em canais diretos, sem dependência de serviços frágeis de envio
+- Tema visual fixo escuro, coerente com a identidade atual da interface
+
+## Upgrade de dependências
+
+O projeto foi mantido em versões estáveis e conservadoras.
+
+- React permanece em 18 para priorizar baixo risco
+- Vite permanece na linha 6 estável
+- Dependências adjacentes de build e lint podem receber updates de patch e minor com validação por lint e build
+- Upgrades de major, como React 19, Vite 7+ ou Tailwind 4, devem ser tratados como uma etapa separada
+
+## Contato
+
+- LinkedIn: https://www.linkedin.com/in/alemartins-lima/
+- GitHub: https://github.com/gafanhotoalexandre
+- Site: https://alemartins.dev.br
+
+## Licença
+
+Este repositório é de uso pessoal como portfólio profissional.

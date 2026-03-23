@@ -1,17 +1,18 @@
 import {
-  Braces,
-  User,
-  Code,
   Briefcase,
-  MessageSquare,
+  Braces,
+  Code,
+  FileText,
   Github,
   Linkedin,
   Mail,
-  FileText,
+  MessageSquare,
+  User,
 } from 'lucide-react'
 import { SidebarIcon } from './SidebarIcon'
 
 import { dotnet_fullstack_curriculum, favicon } from '@/utils'
+import { PROFILE } from '@/utils/constants'
 
 interface SidebarProps {
   activeSection: string
@@ -68,7 +69,7 @@ export const Sidebar = ({ activeSection, setActiveSection }: SidebarProps) => {
           <FileText size={20} />
         </a>
         <a
-          href="https://github.com/gafanhotoalexandre"
+          href={PROFILE.githubUrl}
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Visitar perfil no GitHub"
@@ -77,7 +78,7 @@ export const Sidebar = ({ activeSection, setActiveSection }: SidebarProps) => {
           <Github size={20} />
         </a>
         <a
-          href="https://www.linkedin.com/in/alemartins-lima/"
+          href={PROFILE.linkedinUrl}
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Visitar perfil no LinkedIn"
@@ -86,7 +87,7 @@ export const Sidebar = ({ activeSection, setActiveSection }: SidebarProps) => {
           <Linkedin size={20} />
         </a>
         <a
-          href="mailto:hello@alemartins.dev.br"
+          href={`mailto:${PROFILE.email}`}
           aria-label="Enviar email"
           className="text-slate-500 hover:text-violet-400 transition-colors"
         >

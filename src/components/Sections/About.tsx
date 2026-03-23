@@ -1,3 +1,5 @@
+import { PROFILE } from '@/utils/constants'
+
 interface AboutProps {
   setActiveSection: (section: string) => void
 }
@@ -54,7 +56,7 @@ export const About = ({ setActiveSection }: AboutProps) => {
                   {/* Imagem */}
                   <img
                     className="w-full h-full rounded-full object-cover"
-                    src="https://github.com/gafanhotoalexandre.png"
+                    src={PROFILE.avatarUrl}
                     alt="Desenvolvedor Alexandre Martins"
                   />
                 </div>

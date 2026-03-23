@@ -72,3 +72,11 @@ export const SKILLS = [
     items: ['Git', 'Docker', 'VS Code', 'Visual Studio'],
   },
 ]
+
+export const PROFILE = {
+  avatarUrl: 'https://github.com/gafanhotoalexandre.png',
+  githubUrl: 'https://github.com/gafanhotoalexandre',
+  linkedinUrl: 'https://www.linkedin.com/in/alemartins-lima/',
+  email: 'hello@alemartins.dev.br',
+  emailSubject: 'Contato via portfólio',
+} as const
