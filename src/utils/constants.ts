@@ -82,16 +82,17 @@ export const PROFILE = {
 } as const
 
 export const CONTACT_CONTENT = {
-  eyebrow: 'Contato direto',
-  title: 'Canais simples, profissionais e confiaveis.',
+  eyebrow: 'Contato',
+  title: 'Vamos conversar',
   description:
-    'Se voce quer falar sobre oportunidade, projeto freelance ou troca tecnica, o caminho mais rapido aqui e usar email, LinkedIn, GitHub ou o curriculo.',
-  highlightEyebrow: 'Melhor forma de falar comigo',
-  highlightTitle: 'Email e LinkedIn resolvem praticamente tudo aqui.',
+    'Se você quer falar sobre uma oportunidade, um projeto freelance ou só trocar uma ideia técnica, estes são os canais que eu realmente acompanho.',
+  highlightEyebrow: 'Contato principal',
+  highlightTitle: 'Email direto e LinkedIn costumam ser o caminho mais rápido.',
   highlightDescription:
-    'Neste portfolio, prefiro priorizar canais diretos em vez de depender de um fluxo fragil de envio por terceiros.',
+    'Prefiro priorizar canais simples e confiáveis para que você consiga falar comigo sem depender de formulário ou serviço intermediário.',
   primaryCta: 'Enviar email',
-  secondaryCta: 'Copiar email',
+  secondaryCta: 'Copiar endereço',
+  quickLabel: 'Email para contato',
 } as const
 
 export type ContactMethodId = 'email' | 'linkedin' | 'github' | 'resume'
@@ -109,25 +110,25 @@ export const CONTACT_METHODS: ContactMethod[] = [
     id: 'email',
     title: 'Email direto',
     description: 'Canal mais objetivo para propostas, freelas e oportunidades.',
-    cta: 'Abrir email',
+    cta: 'Mandar mensagem',
   },
   {
     id: 'linkedin',
     title: 'LinkedIn',
     description: 'Bom para conversas profissionais, networking e vagas.',
-    cta: 'Abrir LinkedIn',
+    cta: 'Ver perfil',
   },
   {
     id: 'github',
     title: 'GitHub',
-    description: 'Onde voce pode ver meu codigo, projetos e historico tecnico.',
-    cta: 'Ver GitHub',
+    description: 'Onde você pode ver meu código, projetos e histórico técnico.',
+    cta: 'Ver projetos',
   },
   {
     id: 'resume',
-    title: 'Curriculo',
-    description: 'Resumo direto da minha experiencia, stack e trajetoria.',
-    cta: 'Baixar curriculo',
+    title: 'Currículo',
+    description: 'Resumo direto da minha experiência, stack e trajetória.',
+    cta: 'Baixar PDF',
     download: true,
   },
 ] as const

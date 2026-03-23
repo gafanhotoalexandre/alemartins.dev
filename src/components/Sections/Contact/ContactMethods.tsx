@@ -43,8 +43,8 @@ export const ContactMethods = () => {
 
   return (
     <section className="space-y-8">
-      <div className="rounded-2xl border border-violet-500/20 bg-slate-900/70 p-6 sm:p-8 shadow-xl shadow-violet-950/20">
-        <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+      <div className="rounded-xl border border-slate-800/60 bg-slate-900/60 p-6 shadow-lg sm:p-8">
+        <div className="flex flex-col gap-6 xl:flex-row xl:items-end xl:justify-between">
           <div className="space-y-3">
             <p className="text-sm font-medium uppercase tracking-[0.24em] text-violet-400">
               {CONTACT_CONTENT.highlightEyebrow}
@@ -52,15 +52,20 @@ export const ContactMethods = () => {
             <h3 className="text-2xl font-semibold text-white sm:text-3xl">
               {CONTACT_CONTENT.highlightTitle}
             </h3>
-            <p className="max-w-2xl text-slate-400">
+            <p className="max-w-3xl text-slate-400">
               {CONTACT_CONTENT.highlightDescription}
             </p>
+            <div className="flex flex-wrap items-center gap-3 pt-1 text-sm text-slate-400">
+              <span className="rounded-full border border-slate-700/80 bg-slate-950/60 px-3 py-1 text-slate-200">
+                {CONTACT_CONTENT.quickLabel}: {PROFILE.email}
+              </span>
+            </div>
           </div>
 
-          <div className="flex flex-col gap-3 sm:flex-row">
+          <div className="flex w-full flex-col gap-3 sm:flex-row xl:w-auto xl:flex-shrink-0">
             <a
               href={`mailto:${PROFILE.email}?subject=${encodeURIComponent(PROFILE.emailSubject)}`}
-              className="inline-flex items-center justify-center gap-2 rounded-xl bg-violet-600 px-5 py-3 font-medium text-white transition-colors hover:bg-violet-500"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-violet-600 px-5 py-3 font-medium text-white transition-colors hover:bg-violet-500 sm:w-auto"
             >
               <Mail size={18} />
               {CONTACT_CONTENT.primaryCta}
@@ -68,7 +73,7 @@ export const ContactMethods = () => {
             <button
               type="button"
               onClick={handleCopyEmail}
-              className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-700 px-5 py-3 font-medium text-slate-200 transition-colors hover:border-violet-500 hover:text-white"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-lg border border-slate-700 px-5 py-3 font-medium text-slate-200 transition-colors hover:border-violet-500 hover:text-white sm:w-auto"
             >
               <Copy size={18} />
               {CONTACT_CONTENT.secondaryCta}
@@ -77,7 +82,7 @@ export const ContactMethods = () => {
         </div>
       </div>
 
-      <div className="grid gap-4 md:grid-cols-2">
+      <div className="grid gap-4 lg:grid-cols-2">
         {CONTACT_METHODS.map((method) => {
           const Icon = CONTACT_ICONS[method.id]
 
@@ -88,11 +93,11 @@ export const ContactMethods = () => {
               target={method.download ? undefined : '_blank'}
               rel={method.download ? undefined : 'noopener noreferrer'}
               download={method.download}
-              className="group rounded-2xl border border-slate-800 bg-slate-900/60 p-6 transition-all hover:border-violet-500/50 hover:bg-slate-900"
+              className="group rounded-xl border border-slate-800/60 bg-slate-900/50 p-5 transition-all duration-300 hover:border-violet-500/40 hover:bg-slate-900/70 sm:p-6"
             >
               <div className="flex items-start justify-between gap-4">
                 <div className="space-y-3">
-                  <span className="inline-flex rounded-xl bg-violet-500/10 p-3 text-violet-300">
+                  <span className="inline-flex rounded-lg bg-violet-500/10 p-3 text-violet-300">
                     <Icon size={20} />
                   </span>
                   <div className="space-y-2">
