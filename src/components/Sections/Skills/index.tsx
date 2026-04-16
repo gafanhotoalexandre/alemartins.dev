@@ -1,25 +1,22 @@
-import { Hash } from 'lucide-react'
+import { Braces } from 'lucide-react'
 import { SkillCard } from './SkillCard'
+import { SectionHeader } from '@/components/SectionHeader'
 
 import { SKILLS } from '@/utils/constants'
 
 export const Skills = () => {
   return (
-    <div className="space-y-12">
-      <div className="space-y-2">
-        <h2 className="text-3xl font-bold text-white flex items-center gap-2">
-          <Hash size={24} className="text-violet-500" />
-          Habilidades & Tecnologias
-        </h2>
-        <p className="text-slate-400">Ferramentas que uso no dia a dia</p>
-      </div>
+    <div className="space-y-10 sm:space-y-12">
+      <SectionHeader
+        icon={<Braces size={22} />}
+        title="Stack técnica"
+        description="Tecnologias que uso no dia a dia — do banco de dados ao browser."
+      />
 
-      <div className="grid md:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3">
         {SKILLS.map((category, index) => (
-          <div key={index} className="space-y-4">
-            <h3 className="text-xl font-medium text-white">
-              {category.category}
-            </h3>
+          <div key={index} className="space-y-3">
+            <p className="label-overline">{category.category}</p>
             <div className="space-y-2">
               {category.items.map((skill, i) => (
                 <SkillCard key={i} skill={skill} />

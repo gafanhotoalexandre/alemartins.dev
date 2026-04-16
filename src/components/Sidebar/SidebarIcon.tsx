@@ -1,4 +1,4 @@
-import { ReactNode } from 'react'
+import { type ReactNode } from 'react'
 import { Tooltip } from '../ui/Tooltip'
 
 interface SidebarIconProps {
@@ -17,11 +17,12 @@ export const SidebarIcon = ({
   return (
     <Tooltip content={tooltip}>
       <button
+        type="button"
         onClick={onClick}
         aria-label={typeof tooltip === 'string' ? tooltip : 'Navegar'}
-        className={`transition-colors ${
-          active ? 'text-violet-500' : 'text-slate-500 hover:text-violet-400'
-        }`}
+        aria-current={active ? 'page' : undefined}
+        className="sidebar-nav-btn focus-brand"
+        data-active={active ? 'true' : 'false'}
       >
         {icon}
       </button>

@@ -43,20 +43,31 @@ export const ContactMethods = () => {
 
   return (
     <section className="space-y-8">
-      <div className="rounded-xl border border-slate-800/60 bg-slate-900/60 p-6 shadow-lg sm:p-8">
+      <div
+        className="rounded-xl border p-4 sm:p-6 lg:p-8"
+        style={{
+          background: 'linear-gradient(180deg, rgba(84,65,219,0.07) 0%, rgba(30,34,38,0.98) 36%)',
+          borderColor: 'var(--state-border-hover)',
+        }}
+      >
         <div className="flex flex-col gap-6 xl:flex-row xl:items-end xl:justify-between">
           <div className="space-y-3">
-            <p className="text-sm font-medium uppercase tracking-[0.24em] text-violet-400">
-              {CONTACT_CONTENT.highlightEyebrow}
-            </p>
-            <h3 className="text-2xl font-semibold text-white sm:text-3xl">
+            <p className="label-overline">{CONTACT_CONTENT.highlightEyebrow}</p>
+            <h3 className="text-2xl font-semibold sm:text-3xl" style={{ color: 'var(--text-strong)' }}>
               {CONTACT_CONTENT.highlightTitle}
             </h3>
-            <p className="max-w-3xl text-slate-400">
+            <p className="max-w-3xl" style={{ color: 'var(--text-default)' }}>
               {CONTACT_CONTENT.highlightDescription}
             </p>
-            <div className="flex flex-wrap items-center gap-3 pt-1 text-sm text-slate-400">
-              <span className="rounded-full border border-slate-700/80 bg-slate-950/60 px-3 py-1 text-slate-200">
+            <div className="flex flex-wrap items-center gap-3 pt-1 text-sm">
+              <span
+                className="max-w-full break-all rounded-full border px-3 py-1 font-mono text-xs sm:break-normal"
+                style={{
+                  borderColor: 'var(--state-border)',
+                  color: 'var(--text-default)',
+                  backgroundColor: 'var(--surface-2)',
+                }}
+              >
                 {CONTACT_CONTENT.quickLabel}: {PROFILE.email}
               </span>
             </div>
@@ -65,7 +76,7 @@ export const ContactMethods = () => {
           <div className="flex w-full flex-col gap-3 sm:flex-row xl:w-auto xl:flex-shrink-0">
             <a
               href={`mailto:${PROFILE.email}?subject=${encodeURIComponent(PROFILE.emailSubject)}`}
-              className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-violet-600 px-5 py-3 font-medium text-white transition-colors hover:bg-violet-500 sm:w-auto"
+              className="btn-primary focus-brand inline-flex w-full items-center justify-center gap-2 sm:w-auto"
             >
               <Mail size={18} />
               {CONTACT_CONTENT.primaryCta}
@@ -73,7 +84,7 @@ export const ContactMethods = () => {
             <button
               type="button"
               onClick={handleCopyEmail}
-              className="inline-flex w-full items-center justify-center gap-2 rounded-lg border border-slate-700 px-5 py-3 font-medium text-slate-200 transition-colors hover:border-violet-500 hover:text-white sm:w-auto"
+              className="btn-ghost focus-brand inline-flex w-full items-center justify-center gap-2 sm:w-auto"
             >
               <Copy size={18} />
               {CONTACT_CONTENT.secondaryCta}
@@ -93,18 +104,25 @@ export const ContactMethods = () => {
               target={method.download ? undefined : '_blank'}
               rel={method.download ? undefined : 'noopener noreferrer'}
               download={method.download}
-              className="group rounded-xl border border-slate-800/60 bg-slate-900/50 p-5 transition-all duration-300 hover:border-violet-500/40 hover:bg-slate-900/70 sm:p-6"
+              data-active="false"
+              className="interactive-card focus-brand group rounded-xl p-4 sm:p-5"
             >
               <div className="flex items-start justify-between gap-4">
                 <div className="space-y-3">
-                  <span className="inline-flex rounded-lg bg-violet-500/10 p-3 text-violet-300">
+                  <span
+                    className="inline-flex rounded-lg p-3"
+                    style={{
+                      backgroundColor: 'rgba(84,65,219,0.10)',
+                      color: 'var(--brand-soft)',
+                    }}
+                  >
                     <Icon size={20} />
                   </span>
-                  <div className="space-y-2">
-                    <h4 className="text-lg font-semibold text-white">
+                  <div className="space-y-1.5">
+                    <h4 className="text-lg font-semibold" style={{ color: 'var(--text-strong)' }}>
                       {method.title}
                     </h4>
-                    <p className="text-sm leading-6 text-slate-400">
+                    <p className="text-sm leading-6" style={{ color: 'var(--text-default)' }}>
                       {method.description}
                     </p>
                   </div>
@@ -112,11 +130,15 @@ export const ContactMethods = () => {
 
                 <MoveUpRight
                   size={18}
-                  className="text-slate-500 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-violet-300"
+                  className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                  style={{ color: 'var(--text-muted)' }}
                 />
               </div>
 
-              <div className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-violet-300">
+              <div
+                className="mt-6 inline-flex items-center gap-2 text-sm font-medium"
+                style={{ color: 'var(--brand-soft)' }}
+              >
                 {method.cta}
               </div>
             </a>

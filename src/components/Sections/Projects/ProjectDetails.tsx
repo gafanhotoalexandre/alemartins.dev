@@ -8,42 +8,55 @@ interface ProjectDetailsProps {
     github: string
     demo?: string
   }
+  compact?: boolean
 }
 
-export const ProjectDetails = ({ project }: ProjectDetailsProps) => {
+export const ProjectDetails = ({ project, compact = false }: ProjectDetailsProps) => {
   return (
-    <div className="bg-slate-900/50 rounded-xl border border-slate-800/50 p-6 space-y-6 sticky top-8 h-max">
+    <div
+      className={`rounded-xl border space-y-5 ${compact ? 'p-4 sm:p-5' : 'h-max p-5 sm:p-6 lg:sticky lg:top-8 lg:space-y-6'}`}
+      style={{
+        backgroundColor: 'var(--surface-1)',
+        borderColor: compact ? 'var(--state-border-hover)' : 'var(--state-border)',
+      }}
+    >
+      {/* Overline */}
+      <p className="label-overline">{compact ? 'Detalhe do projeto' : 'Projeto selecionado'}</p>
+
       <div className="space-y-4">
-        <h3 className="text-2xl font-medium text-white">{project.title}</h3>
-        <p className="text-slate-400">{project.description}</p>
+        <h3 className="text-xl font-semibold sm:text-2xl" style={{ color: 'var(--text-strong)' }}>
+          {project.title}
+        </h3>
+        <p className="leading-relaxed" style={{ color: 'var(--text-default)' }}>
+          {project.description}
+        </p>
         <div className="flex flex-wrap gap-2">
           {project.stack.map((tech, i) => (
-            <span
-              key={i}
-              className="px-3 py-1 bg-violet-500/10 text-violet-400 rounded-full text-sm border border-violet-500/20"
-            >
-              {tech}
-            </span>
+            <span key={i} className="badge-tech">{tech}</span>
           ))}
         </div>
       </div>
-      <div className="flex gap-4">
+
+      {/* Links */}
+      <div className="flex flex-wrap gap-4 pt-2">
         <a
           href={project.github}
           target="_blank"
-          className="flex items-center gap-2 text-violet-400 hover:text-violet-300"
+          rel="noopener noreferrer"
+          className="link-external focus-brand rounded-md"
         >
-          <Github size={18} />
-          Código
+          <Github size={17} />
+          Ver código
         </a>
         {project.demo && (
           <a
             href={project.demo}
             target="_blank"
-            className="flex items-center gap-2 text-violet-400 hover:text-violet-300"
+            rel="noopener noreferrer"
+            className="link-external focus-brand rounded-md"
           >
-            <ExternalLink size={18} />
-            Preview
+            <ExternalLink size={17} />
+            Demo
           </a>
         )}
       </div>

@@ -4,61 +4,67 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
-    --radius: 0.5rem
-  }
+/* ─── Brand tokens ─────────────────────────────────────────── */
+:root {
+  /* Palette from the logo */
+  --brand-canvas:  #191D20;
+  --brand-deep:    #4230A2;
+  --brand-primary: #5441DB;
+  --brand-soft:    #9F61E6;
+  --brand-white:   #FDFDFD;
 
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%
-  }
+  /* Surfaces */
+  --surface-0: #191D20;         /* canvas / page bg        */
+  --surface-1: #1E2226;         /* raised surface          */
+  --surface-2: #252A2F;         /* elevated card           */
+
+  /* Borders */
+  --border-subtle:   rgba(66, 48, 162, 0.25);   /* structural, low emphasis */
+  --border-muted:    rgba(66, 48, 162, 0.40);   /* card default             */
+  --border-active:   rgba(84, 65, 219, 0.82);   /* selected                 */
+  --border-focus:    #5441DB;                   /* keyboard focus ring      */
+
+  /* Interaction states */
+  --state-border: rgba(66, 48, 162, 0.32);
+  --state-border-hover: rgba(84, 65, 219, 0.48);
+  --state-border-selected: rgba(84, 65, 219, 0.82);
+  --state-surface-hover: #2A2F35;
+  --state-glow: rgba(84, 65, 219, 0.16);
+
+  /* Text */
+  --text-strong:     #FDFDFD;
+  --text-default:    #C8CAD0;
+  --text-muted:      #7A7F8A;
+  --text-accent:     #9F61E6;
+
+  /* Actions */
+  --action-bg:       #5441DB;
+  --action-bg-hover: #4230A2;
+  --action-glow:     rgba(84, 65, 219, 0.30);
+
+  /* Shadcn/Sonner compatibility – dark mode always on for this portfolio */
+  --background: 222 14% 11%;
+  --foreground: 0 0% 99%;
+  --card: 220 13% 13%;
+  --card-foreground: 0 0% 99%;
+  --popover: 220 13% 13%;
+  --popover-foreground: 0 0% 99%;
+  --primary: 247 64% 55%;
+  --primary-foreground: 0 0% 99%;
+  --secondary: 220 13% 16%;
+  --secondary-foreground: 0 0% 99%;
+  --muted: 220 13% 16%;
+  --muted-foreground: 220 8% 54%;
+  --accent: 270 62% 65%;
+  --accent-foreground: 0 0% 99%;
+  --destructive: 0 72% 51%;
+  --destructive-foreground: 0 0% 99%;
+  --border: 240 10% 20%;
+  --input: 240 10% 20%;
+  --ring: 247 64% 55%;
+  --radius: 0.5rem;
+
+  scroll-behavior: smooth;
 }
 
 @layer base {
@@ -66,14 +72,195 @@
     @apply border-border;
   }
 
+  html {
+    color-scheme: dark;
+  }
+
   body {
-    @apply bg-background text-foreground;
+    background-color: var(--brand-canvas);
+    color: var(--text-default);
+    /* ── subtle dot-grid texture ──────────────────────────────
+       Only visible in negative space / gutters. Keep below 3%
+       opacity so it never competes with text or UI elements.  */
+    background-image: radial-gradient(
+      circle,
+      rgba(84, 65, 219, 0.28) 0.6px,
+      transparent 0.6px
+    );
+    background-size: 22px 22px;
+    /* Fade the dots toward the viewport edges */
+    -webkit-mask-image:
+      radial-gradient(ellipse 90% 90% at 50% 50%, black 55%, transparent 100%);
+    mask-image:
+      radial-gradient(ellipse 90% 90% at 50% 50%, black 55%, transparent 100%);
   }
 }
 
-/* Lia Letter */
-:root {
-  scroll-behavior: smooth;
+/* ─── Reusable surface utilities ───────────────────────────── */
+@layer components {
+  /* Cards & panels */
+  .card-surface {
+    @apply rounded-xl border bg-[var(--surface-1)] shadow-sm;
+    border-color: var(--state-border);
+  }
+
+  .card-surface-hover {
+    @apply rounded-xl border bg-[var(--surface-1)] shadow-sm transition-all duration-300;
+    border-color: var(--state-border);
+  }
+
+  .interactive-card {
+    @apply rounded-xl border transition-all duration-200;
+    background-color: var(--surface-1);
+    border-color: var(--state-border);
+  }
+
+  .interactive-card[data-active='true'] {
+    background-color: var(--surface-2);
+    border-color: var(--state-border-selected);
+    box-shadow: 0 0 18px 0 var(--state-glow);
+  }
+
+  /* Tech / skill badges */
+  .badge-tech {
+    @apply rounded-full border px-3 py-0.5 text-sm font-medium;
+    background-color: rgba(84, 65, 219, 0.10);
+    border-color: rgba(84, 65, 219, 0.22);
+    color: var(--text-accent);
+  }
+
+  /* Primary action button */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-5 py-3 font-medium transition-all duration-200;
+    background-color: var(--action-bg);
+    color: var(--brand-white);
+    box-shadow: 0 0 0 0 var(--action-glow);
+  }
+
+  /* Secondary / ghost action button */
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg border px-5 py-3 font-medium transition-all duration-200;
+    border-color: rgba(120, 120, 140, 0.45);
+    color: var(--text-default);
+  }
+
+  /* Overline / eyebrow label */
+  .label-overline {
+    @apply text-xs font-semibold uppercase tracking-[0.22em];
+    color: var(--text-accent);
+  }
+
+  /* External link with arrow affordance */
+  .link-external {
+    @apply inline-flex items-center gap-1.5 font-medium transition-colors duration-150;
+    color: var(--text-accent);
+  }
+
+  /* Section header wrapper */
+  .section-header {
+    @apply space-y-1.5;
+  }
+  .section-header h2 {
+    @apply flex items-center gap-2 text-2xl font-bold sm:text-3xl;
+    color: var(--text-strong);
+  }
+  .section-header p {
+    @apply max-w-3xl text-sm sm:text-base;
+    color: var(--text-muted);
+  }
+
+  /* Sidebar nav button */
+  .sidebar-nav-btn {
+    @apply flex h-11 w-11 items-center justify-center rounded-lg border border-transparent transition-all duration-200;
+    color: var(--text-muted);
+  }
+  .sidebar-nav-btn[data-active='true'] {
+    color: var(--brand-white);
+    background-color: rgba(84, 65, 219, 0.14);
+    border-color: var(--state-border-selected);
+    box-shadow: 0 0 14px 0 var(--state-glow);
+  }
+
+  .icon-link {
+    @apply inline-flex items-center justify-center rounded-lg border border-transparent transition-all duration-200;
+    color: var(--text-muted);
+  }
+
+  .mobile-nav {
+    @apply fixed inset-x-0 bottom-0 z-50 flex items-center justify-between gap-1 border-t px-3 pt-2 lg:hidden;
+    background-color: rgba(25, 29, 32, 0.94);
+    border-color: var(--state-border);
+    backdrop-filter: blur(16px);
+    padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 0.5rem);
+  }
+
+  .mobile-nav-btn {
+    @apply flex min-w-0 flex-1 flex-col items-center gap-1 rounded-xl px-2 py-2 text-[11px] font-medium transition-all duration-200;
+    color: var(--text-muted);
+  }
+
+  .mobile-nav-btn[data-active='true'] {
+    color: var(--brand-white);
+    background-color: rgba(84, 65, 219, 0.16);
+    box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.04);
+  }
+
+  /* Focus ring override to use brand color */
+  .focus-brand:focus-visible {
+    @apply outline-none;
+    box-shadow: 0 0 0 2px var(--border-focus);
+  }
+}
+
+@media (hover: hover) {
+  .card-surface-hover:hover,
+  .interactive-card:hover {
+    border-color: var(--state-border-hover);
+    background-color: var(--state-surface-hover);
+    box-shadow: 0 0 16px 0 var(--state-glow);
+  }
+
+  .btn-primary:hover {
+    background-color: var(--action-bg-hover);
+    box-shadow: 0 0 16px 2px var(--action-glow);
+  }
+
+  .btn-ghost:hover {
+    border-color: var(--state-border-hover);
+    color: var(--brand-white);
+  }
+
+  .link-external:hover,
+  .icon-link:hover,
+  .mobile-nav-btn:hover,
+  .sidebar-nav-btn:hover {
+    color: var(--brand-white);
+  }
+
+  .icon-link:hover,
+  .mobile-nav-btn:hover,
+  .sidebar-nav-btn:hover {
+    background-color: rgba(84, 65, 219, 0.10);
+    border-color: rgba(84, 65, 219, 0.12);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .interactive-card,
+  .card-surface-hover,
+  .btn-primary,
+  .btn-ghost,
+  .link-external,
+  .icon-link,
+  .mobile-nav-btn,
+  .sidebar-nav-btn {
+    transition: none;
+  }
+
+  .animate-float,
+  .animate-fade-in {
+    animation: none;
+  }
 }
 
 .font-script {

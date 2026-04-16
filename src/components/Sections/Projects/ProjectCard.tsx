@@ -13,15 +13,29 @@ export const ProjectCard = ({
 }: ProjectCardProps) => {
   return (
     <button
+      type="button"
       onClick={onClick}
-      className={`w-full p-6 text-left rounded-xl border transition-all duration-300 ${
-        active
-          ? 'bg-slate-900/80 border-violet-500/50 shadow-lg shadow-violet-500/10'
-          : 'bg-slate-900/20 border-slate-800/50 hover:border-violet-500/30'
-      }`}
+      aria-pressed={active}
+      data-active={active ? 'true' : 'false'}
+      className="interactive-card focus-brand w-full rounded-xl p-4 text-left sm:p-5"
     >
-      <h3 className="text-xl font-medium text-white">{title}</h3>
-      <p className="text-slate-400 text-sm">{description}</p>
+      <div className="mb-2 flex items-center gap-2">
+        <span
+          className="h-2 w-2 rounded-full"
+          style={{
+            backgroundColor: active ? 'var(--brand-primary)' : 'rgba(66, 48, 162, 0.5)',
+          }}
+        />
+        <span className="label-overline" style={{ opacity: active ? 1 : 0.55 }}>
+          {active ? 'Selecionado' : 'Projeto'}
+        </span>
+      </div>
+      <h3 className="mb-1 text-base font-semibold sm:text-lg" style={{ color: 'var(--text-strong)' }}>
+        {title}
+      </h3>
+      <p className="line-clamp-3 text-sm leading-relaxed" style={{ color: active ? 'var(--text-default)' : 'var(--text-muted)' }}>
+        {description}
+      </p>
     </button>
   )
 }

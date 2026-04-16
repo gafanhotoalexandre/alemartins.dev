@@ -17,6 +17,14 @@ export default {
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
   		},
+  		// Brand palette from the logo
+  		brand: {
+  			canvas:  '#191D20',
+  			deep:    '#4230A2',
+  			primary: '#5441DB',
+  			soft:    '#9F61E6',
+  			white:   '#FDFDFD',
+  		},
   		colors: {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
