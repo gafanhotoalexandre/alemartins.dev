@@ -1,42 +1,34 @@
 {
-  "name": "alemartins001",
+  "name": "alexandre-martins-portfolio",
+  "version": "1.0.0",
   "private": true,
-  "version": "0.0.0",
   "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
+  "engines": {
+    "node": ">=24 <25",
+    "npm": ">=11"
   },
-  "dependencies": {
-    "@fontsource/dancing-script": "^5.2.8",
-    "@fontsource/inter": "^5.2.8",
-    "class-variance-authority": "^0.7.1",
-    "clsx": "^2.1.1",
-    "lucide-react": "^0.454.0",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-router": "^7.13.1",
-    "sonner": "^1.7.4",
-    "tailwind-merge": "^2.6.1",
-    "tailwindcss-animate": "^1.0.7"
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "typecheck": "tsc --noEmit",
+    "build": "npm run typecheck && vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "test": "playwright test",
+    "test:install": "playwright install chromium",
+    "audit:performance": "node scripts/lighthouse.mjs",
+    "format": "prettier --write index.html src tests scripts vite.config.ts playwright.config.ts tsconfig.json package.json"
   },
   "devDependencies": {
-    "@eslint/js": "^9.39.4",
-    "@types/node": "^22.19.15",
-    "@types/react": "^18.3.28",
-    "@types/react-dom": "^18.3.7",
-    "@vitejs/plugin-react": "^4.7.0",
-    "autoprefixer": "^10.4.27",
-    "eslint": "^9.39.4",
-    "eslint-plugin-react-hooks": "^5.2.0",
-    "eslint-plugin-react-refresh": "^0.4.26",
-    "globals": "^15.15.0",
-    "postcss": "^8.5.8",
-    "tailwindcss": "^3.4.19",
-    "typescript": "~5.6.3",
-    "typescript-eslint": "^8.57.1",
-    "vite": "^6.4.1"
+    "@axe-core/playwright": "^4.11.0",
+    "@fontsource-variable/dm-sans": "^5.2.0",
+    "@fontsource/dm-mono": "^5.2.0",
+    "@fontsource/instrument-serif": "^5.2.0",
+    "@playwright/test": "^1.58.2",
+    "@tailwindcss/vite": "^4.2.1",
+    "@types/node": "^24.0.0",
+    "lighthouse": "^13.0.0",
+    "prettier": "^3.9.10",
+    "tailwindcss": "^4.2.1",
+    "typescript": "~6.0.0",
+    "vite": "^8.0.0"
   }
 }
