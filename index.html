@@ -1,49 +1,757 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<!doctype html>
+<html lang="pt-BR" data-theme="light">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <link
+      rel="preload"
+      href="/node_modules/@fontsource-variable/dm-sans/files/dm-sans-latin-wght-normal.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/node_modules/@fontsource/instrument-serif/files/instrument-serif-latin-400-italic.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="stylesheet" href="/src/styles.css" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="canonical" href="https://alemartins.dev.br/" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f3f0e8" />
     <meta
       name="description"
-      content="Desenvolvedor Full Stack especializado em React, .NET, Clean Architecture, DDD e soluções escaláveis."
+      content="Alexandre Martins — desenvolvedor de software com foco em C#/.NET, backend, APIs e sistemas web. Conheça meus projetos e minha experiência."
     />
-    <meta
-      name="keywords"
-      content="Alexandre Martins, portfólio, desenvolvedor, React, .NET, DDD, Clean Architecture, software, projetos"
-    />
-    <!-- OpenGraph e Twitter -->
+    <title>Alexandre Martins - Desenvolvedor de software</title>
+    <meta property="og:type" content="website" />
     <meta
       property="og:title"
-      content="Alexandre Martins | Desenvolvedor Full Stack React & .NET"
+      content="Alexandre Martins — Desenvolvedor de software"
     />
     <meta
       property="og:description"
-      content="Especialista em soluções modernas com React, .NET, DDD e Clean Architecture."
+      content="Backend, APIs e sistemas web em C#/.NET. Projetos, experiência e um pouco sobre mim."
     />
-    <meta property="og:image" content="/og_banner.png" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://alemartins.dev.br" />
-
+    <meta property="og:url" content="https://alemartins.dev.br/" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:site_name" content="Alexandre Martins" />
+    <meta
+      property="og:image"
+      content="https://alemartins.dev.br/social-card.png"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Alexandre Martins — Backend, APIs e sistemas web."
+    />
     <meta name="twitter:card" content="summary_large_image" />
     <meta
       name="twitter:title"
-      content="Alexandre Martins | Desenvolvedor Full Stack React & .NET"
+      content="Alexandre Martins — Desenvolvedor de software"
     />
     <meta
       name="twitter:description"
-      content="Especialista em soluções modernas com React, .NET, DDD e Clean Architecture."
+      content="Backend, APIs e sistemas web em C#/.NET. Projetos, experiência e um pouco sobre mim."
     />
-    <meta name="twitter:image" content="/og_banner.png" />
-    <!-- Define a cor da barra de endereço em navegadores móveis para combinar com o tema do site -->
-    <meta name="theme-color" content="#5441DB" />
-    <title>Alexandre Martins | Desenvolvedor Full Stack React & .NET</title>
+    <meta
+      name="twitter:image"
+      content="https://alemartins.dev.br/social-card.png"
+    />
+    <meta
+      name="twitter:image:alt"
+      content="Alexandre Martins — Backend, APIs e sistemas web."
+    />
+    <script>
+      // Apply the saved preference before painting the page.
+      (() => {
+        document.documentElement.classList.add("js-enabled");
+        let theme;
+        try {
+          theme = localStorage.getItem("am-theme");
+        } catch (_) {}
+        if (theme !== "light" && theme !== "dark")
+          theme = window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light";
+        document.documentElement.dataset.theme = theme;
+        document.querySelector('meta[name="theme-color"]').content =
+          theme === "dark" ? "#141e1b" : "#f3f0e8";
+      })();
+    </script>
   </head>
-  <body>
-    <div id="root"></div>
-    <noscript>
-      Este site requer JavaScript para funcionar corretamente.
-    </noscript>
-    <script type="module" src="/src/main.tsx"></script>
+  <body class="grain">
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+    <header class="site-header">
+      <div class="container-custom header-inner">
+        <a
+          href="#inicio"
+          class="header-brand"
+          aria-label="Alexandre Martins, voltar ao início"
+        >
+          <span class="brand-mark" aria-hidden="true"
+            >a<span style="color: var(--accent)">.</span></span
+          >
+          <span
+            ><strong class="block text-sm tracking-tight"
+              >alexandre martins</strong
+            ><small class="brand-subtitle mono muted"
+              >DESENVOLVEDOR DE SOFTWARE</small
+            ></span
+          >
+        </a>
+        <nav class="desktop-nav" aria-label="Navegação principal">
+          <a class="nav-link" href="#sobre">Sobre</a
+          ><a class="nav-link" href="#experiencia">Experiência</a
+          ><a class="nav-link" href="#projetos">Projetos</a
+          ><a class="nav-link" href="#stack">Tecnologias</a
+          ><a class="nav-link" href="#contato">Contato</a>
+        </nav>
+        <div class="header-actions">
+          <button
+            id="themeBtn"
+            hidden
+            class="icon-button"
+            type="button"
+            aria-label="Ativar tema escuro"
+            title="Alternar tema"
+            aria-pressed="false"
+          >
+            <svg
+              id="themeIcon"
+              width="17"
+              height="17"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.7"
+              stroke-linecap="round"
+              aria-hidden="true"
+            >
+              <path d="M20.1 15.1A8 8 0 0 1 8.9 3.9a8.2 8.2 0 1 0 11.2 11.2Z" />
+            </svg>
+          </button>
+          <button
+            id="menuBtn"
+            hidden
+            class="icon-button"
+            type="button"
+            aria-label="Abrir menu"
+            aria-expanded="false"
+            aria-controls="mobileNav"
+          >
+            <svg
+              width="19"
+              height="19"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              aria-hidden="true"
+            >
+              <path d="M3 7h18M3 12h18M3 17h18" />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <nav
+        id="mobileNav"
+        class="mobile-menu mono"
+        aria-label="Navegação móvel"
+        hidden
+      >
+        <a href="#sobre">Sobre</a><a href="#experiencia">Experiência</a
+        ><a href="#projetos">Projetos</a><a href="#stack">Tecnologias</a
+        ><a href="#contato">Contato</a>
+      </nav>
+    </header>
+    <main id="conteudo" tabindex="-1">
+      <section id="inicio" class="hero" aria-labelledby="hero-title">
+        <div class="container-custom hero-layout">
+          <div>
+            <h1 id="hero-title" class="hero-headline">
+              <span class="headline-line">Backend, APIs</span>
+              <span class="headline-line serif italic"
+                >e sistemas web<span class="accent">.</span></span
+              >
+            </h1>
+            <p class="hero-desc">
+              Trabalho no desenvolvimento e na evolução de aplicações em
+              <strong>C#/.NET</strong>. Também desenvolvo interfaces com Angular
+              e React.
+            </p>
+            <div class="hero-actions">
+              <a class="button-primary" href="#projetos"
+                >Ver projetos
+                <span aria-hidden="true" style="font-size: 19px">↗</span></a
+              ><a class="button-text" href="#contato"
+                >Entrar em contato <span aria-hidden="true">↗</span></a
+              >
+            </div>
+            <p class="hero-location mono muted">
+              JUAZEIRO DO NORTE, CEARÁ · BRASIL
+            </p>
+          </div>
+          <figure class="portrait-composition">
+            <img
+              class="portrait-image"
+              src="/assets/alexandre-martins.png"
+              alt="Alexandre Martins, de óculos, ao ar livre"
+              width="460"
+              height="460"
+              fetchpriority="high"
+              decoding="async"
+            />
+            <span class="portrait-corner" aria-hidden="true"></span>
+            <figcaption class="portrait-caption">
+              <span class="serif italic">Esse sou eu.</span>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section
+        id="sobre"
+        class="content-section section-rule"
+        aria-labelledby="about-title"
+      >
+        <div class="container-custom section-layout">
+          <div class="reveal">
+            <p class="section-kicker mono mb-5">01 / SOBRE</p>
+            <h2 id="about-title" class="section-title">
+              Um pouco<br /><span class="serif italic" style="font-weight: 400"
+                >sobre mim.</span
+              >
+            </h2>
+            <p class="section-intro">
+              Sou de Juazeiro do Norte, no Ceará. Gosto de entender como as
+              coisas funcionam e por que certas decisões foram tomadas.
+            </p>
+          </div>
+          <div class="about-copy reveal">
+            <p>
+              Sou formado em Análise e Desenvolvimento de Sistemas e curso
+              pós-graduação em Engenharia de Software com Métodos Ágeis.
+              Trabalho com desenvolvimento de sistemas web, principalmente no
+              ecossistema .NET.
+            </p>
+            <p>
+              Gosto de arquitetura e de discutir alternativas. Me incomoda
+              quando uma alteração pequena exige atravessar várias abstrações só
+              para descobrir onde mexer.
+            </p>
+            <aside class="personal-note" aria-label="Interesses pessoais">
+              <p class="note-label mono">FORA DA PROGRAMAÇÃO</p>
+              <p>
+                Gosto de literatura, filosofia e teologia. Também me interesso
+                por escrita criativa.
+              </p>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="experiencia"
+        class="content-section experience-section"
+        aria-labelledby="experience-title"
+      >
+        <div class="container-custom section-layout">
+          <div class="reveal">
+            <p class="section-kicker mono mb-5">02 / EXPERIÊNCIA</p>
+            <h2 id="experience-title" class="section-title">
+              Experiência<span
+                class="serif italic"
+                style="font-weight: 400; color: #efb393"
+                >.</span
+              >
+            </h2>
+            <p class="section-intro">
+              Boa parte do meu trabalho envolve software que já existe: entender
+              as regras, acompanhar o comportamento atual e desenvolver o que
+              precisa mudar.
+            </p>
+          </div>
+          <div class="reveal">
+            <p class="experience-overline mono">
+              DESENVOLVIMENTO DE SISTEMAS WEB
+            </p>
+            <h3 class="experience-heading">
+              Evolução de sistemas para o setor jurídico.
+            </h3>
+            <p class="experience-description">
+              Trabalho em equipe no desenvolvimento e na evolução de sistemas
+              para o setor jurídico, com atuação em APIs, interfaces web,
+              integrações e persistência de dados.
+            </p>
+            <ul class="experience-list">
+              <li>
+                <span class="mono" aria-hidden="true">01</span
+                ><span
+                  ><strong>Funcionalidades de ponta a ponta.</strong>
+                  Desenvolvimento de consultas, cadastros e visualização de
+                  informações, conectando interfaces Angular a serviços em
+                  C#/.NET.</span
+                >
+              </li>
+              <li>
+                <span class="mono" aria-hidden="true">02</span
+                ><span
+                  ><strong>Integrações e processamento.</strong> Implementação e
+                  manutenção de integrações e tarefas em segundo plano, com
+                  atenção ao tratamento de falhas.</span
+                >
+              </li>
+              <li>
+                <span class="mono" aria-hidden="true">03</span
+                ><span
+                  ><strong>Dados e persistência.</strong> Consultas com EF Core,
+                  modelagem e evolução dos dados necessários às
+                  funcionalidades.</span
+                >
+              </li>
+              <li>
+                <span class="mono" aria-hidden="true">04</span
+                ><span
+                  ><strong>Manutenção e revisão.</strong> Investigação de
+                  comportamentos, refatorações localizadas e simplificação de
+                  implementações, com revisão técnica em equipe.</span
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="projetos"
+        class="content-section"
+        aria-labelledby="projects-title"
+      >
+        <div class="container-custom">
+          <div class="projects-heading reveal">
+            <div>
+              <p class="section-kicker mono mb-5">03 / PROJETOS PESSOAIS</p>
+              <h2 id="projects-title" class="section-title">
+                Algumas coisas<br /><span
+                  class="serif italic"
+                  style="font-weight: 400"
+                  >que desenvolvi.</span
+                >
+              </h2>
+            </div>
+            <p>
+              Uma API de clientes, um controle financeiro e um diário de
+              treinos. O código de cada um está disponível no GitHub.
+            </p>
+          </div>
+          <div class="project-grid">
+            <article class="project-card project-big reveal">
+              <div
+                class="project-art"
+                role="img"
+                aria-label="Ilustração conceitual do projeto, com dados fictícios"
+                style="background: #234637; color: #f0ebdc"
+              >
+                <span class="art-disclaimer mono"
+                  >Ilustração · dados fictícios</span
+                ><span class="art-label mono">01 / BACKEND</span>
+                <div class="mock-window">
+                  <div
+                    style="padding: 14px 17px; border-bottom: 1px solid #567361"
+                    class="flex items-center justify-between"
+                  >
+                    <div class="mock-dots"><i></i><i></i><i></i></div>
+                    <span class="mono" style="font-size: 10px; color: #a5b8a8"
+                      >customers-hub / requests</span
+                    >
+                  </div>
+                  <div style="padding: 17px 21px">
+                    <div class="mono mb-3" style="font-size: 11px">
+                      <span style="color: #9dd9b6">GET</span> &nbsp;
+                      /api/Customer
+                    </div>
+                    <div
+                      style="
+                        border-bottom: 1px solid #496454;
+                        margin-bottom: 12px;
+                      "
+                    ></div>
+                    <div class="mock-code">
+                      <span class="code-soft">// 200 OK — application/json</span
+                      ><br /><span class="code-accent">[ {</span><br />&nbsp;
+                      <span class="code-mint">"id"</span>:
+                      <span class="code-accent">1</span>,<br />&nbsp;
+                      <span class="code-mint">"name"</span>:
+                      <span class="code-accent">"Ana Oliveira"</span
+                      >,<br />&nbsp;
+                      <span class="code-soft">// outros campos do cliente</span
+                      ><br /><span class="code-accent">} ]</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="project-title-row">
+                  <div>
+                    <p class="section-kicker mono mb-3" style="font-size: 10px">
+                      BACKEND / PROJETO PESSOAL
+                    </p>
+                    <h3 class="project-title">CustomersHub</h3>
+                  </div>
+                  <a
+                    class="card-arrow"
+                    href="https://github.com/gafanhotoalexandre/customers-hub"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Ver o código de CustomersHub no GitHub"
+                    >↗</a
+                  >
+                </div>
+                <p class="project-desc mt-3 mb-5">
+                  API para cadastro, consulta, atualização e exclusão de
+                  clientes em .NET 8. Utiliza CQRS com MediatR, validação com
+                  FluentValidation e persistência com EF Core e SQLite.
+                </p>
+                <div class="flex flex-wrap gap-2">
+                  <span class="tech-pill">C# / .NET</span
+                  ><span class="tech-pill">CQRS</span
+                  ><span class="tech-pill">EF Core</span
+                  ><span class="tech-pill">FluentValidation</span>
+                </div>
+                <p class="project-context">
+                  <strong>O que explorei:</strong> separação entre comandos e
+                  consultas, validação de entrada e organização das
+                  responsabilidades.
+                </p>
+                <div class="project-links">
+                  <a
+                    href="https://github.com/gafanhotoalexandre/customers-hub"
+                    aria-label="Ver o código de CustomersHub no GitHub"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Ver código <span aria-hidden="true">↗</span></a
+                  >
+                </div>
+              </div>
+            </article>
+            <article class="project-card project-small reveal">
+              <div
+                class="project-art"
+                role="img"
+                aria-label="Ilustração conceitual do projeto, com dados fictícios"
+                style="background: #eacfc0; color: #764d39"
+              >
+                <span class="art-disclaimer mono"
+                  >Ilustração · dados fictícios</span
+                ><span class="art-label mono">02 / APLICAÇÃO WEB</span>
+                <div class="finance-window">
+                  <div class="flex justify-between items-center">
+                    <span style="font-size: 12px; font-weight: 800"
+                      >project<span style="color: #a24f35">finance.</span></span
+                    ><span class="mono" style="font-size: 9px; color: #596d5e"
+                      >● overview</span
+                    >
+                  </div>
+                  <div class="mt-6 mono" style="font-size: 9px; color: #596d5e">
+                    SALDO TOTAL / DEMO
+                  </div>
+                  <div class="text-[30px] font-bold tracking-[-.06em] mt-1">
+                    R$ 12.840<span style="font-size: 14px; color: #596d5e"
+                      >,00</span
+                    >
+                  </div>
+                  <div class="finance-bars">
+                    <div style="height: 32%"></div>
+                    <div style="height: 53%"></div>
+                    <div style="height: 45%"></div>
+                    <div style="height: 69%"></div>
+                    <div style="height: 46%"></div>
+                    <div style="height: 84%"></div>
+                    <div style="height: 74%"></div>
+                    <div style="height: 96%"></div>
+                  </div>
+                  <div
+                    class="flex justify-between mono mt-3"
+                    style="color: #596d5e; font-size: 8px"
+                  >
+                    <span>JAN</span><span>FEV</span><span>MAR</span
+                    ><span>ABR</span><span>MAI</span><span>JUN</span
+                    ><span>JUL</span><span>AGO</span>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="project-title-row">
+                  <div>
+                    <p class="section-kicker mono mb-3" style="font-size: 10px">
+                      FULLSTACK / PROJETO PESSOAL
+                    </p>
+                    <h3 class="project-title">Project Finance</h3>
+                  </div>
+                  <a
+                    class="card-arrow"
+                    href="https://github.com/gafanhotoalexandre/finances"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Ver o código de Project Finance no GitHub"
+                    >↗</a
+                  >
+                </div>
+                <p class="project-desc mt-3 mb-5">
+                  Aplicação de fluxo de caixa pessoal, com dashboard mensal,
+                  convites por workspace e reservas financeiras. Feita com
+                  React, Supabase e Zustand.
+                </p>
+                <div class="flex flex-wrap gap-2">
+                  <span class="tech-pill">React</span
+                  ><span class="tech-pill">Supabase</span
+                  ><span class="tech-pill">Zustand</span>
+                </div>
+                <p class="project-context">
+                  <strong>Na implementação:</strong> autenticação e dados no
+                  Supabase, com regras de acesso por workspace no banco.
+                </p>
+                <div class="project-links">
+                  <a
+                    href="https://github.com/gafanhotoalexandre/finances"
+                    aria-label="Ver o código de Project Finance no GitHub"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Ver código <span aria-hidden="true">↗</span></a
+                  >
+                </div>
+              </div>
+            </article>
+            <article class="project-card project-small reveal">
+              <div
+                class="project-art"
+                role="img"
+                aria-label="Ilustração conceitual do projeto, com dados fictícios"
+                style="background: #bfd6ce; color: #194c3c"
+              >
+                <span class="art-disclaimer mono"
+                  >Ilustração · dados fictícios</span
+                ><span class="art-label mono">03 / INTERFACE WEB</span>
+                <div class="fitness-window">
+                  <div class="flex justify-between items-center">
+                    <span
+                      style="
+                        font-weight: 800;
+                        font-size: 18px;
+                        letter-spacing: -0.04em;
+                      "
+                      >recovery<span style="color: #367653">fit</span></span
+                    ><span class="mono" style="font-size: 10px">◉</span>
+                  </div>
+                  <div
+                    class="mt-7 mono"
+                    style="font-size: 10px; color: #4f6c5b"
+                  >
+                    TREINO DE HOJE
+                  </div>
+                  <div class="text-[30px] font-bold tracking-[-.06em] mt-1">
+                    3 de 4
+                    <span style="font-weight: 400; font-size: 13px"
+                      >séries</span
+                    >
+                  </div>
+                  <div class="fitness-progress mt-3"><div></div></div>
+                  <div class="flex gap-2 mt-5">
+                    <div
+                      style="
+                        background: #e0eadd;
+                        border: 1px solid #c4d6be;
+                        border-radius: 9px;
+                        padding: 12px;
+                        flex: 1;
+                      "
+                    >
+                      <div class="mono" style="font-size: 9px; color: #4b6655">
+                        SEG
+                      </div>
+                      <strong style="font-size: 12px">Upper</strong>
+                      <div style="color: #2d6857">✓</div>
+                    </div>
+                    <div
+                      style="
+                        background: #e0eadd;
+                        border: 1px solid #c4d6be;
+                        border-radius: 9px;
+                        padding: 12px;
+                        flex: 1;
+                      "
+                    >
+                      <div class="mono" style="font-size: 9px; color: #4b6655">
+                        TER
+                      </div>
+                      <strong style="font-size: 12px">Lower</strong>
+                      <div style="color: #2d6857">✓</div>
+                    </div>
+                    <div
+                      style="
+                        background: #e0eadd;
+                        border: 1px solid #c4d6be;
+                        border-radius: 9px;
+                        padding: 12px;
+                        flex: 1;
+                      "
+                    >
+                      <div class="mono" style="font-size: 9px; color: #4b6655">
+                        QUA
+                      </div>
+                      <strong style="font-size: 12px">Rest</strong>
+                      <div style="color: #2d6857">✓</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="project-title-row">
+                  <div>
+                    <p class="section-kicker mono mb-3" style="font-size: 10px">
+                      FRONTEND / PROJETO PESSOAL
+                    </p>
+                    <h3 class="project-title">RecoveryFit</h3>
+                  </div>
+                  <a
+                    class="card-arrow"
+                    href="https://github.com/gafanhotoalexandre/recovery-fit"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Ver o código de RecoveryFit no GitHub"
+                    >↗</a
+                  >
+                </div>
+                <p class="project-desc mt-3 mb-5">
+                  Diário de treinos para registrar séries e acompanhar a
+                  recuperação. Os dados ficam no navegador, com geração e cópia
+                  de um relatório Markdown da sessão atual.
+                </p>
+                <div class="flex flex-wrap gap-2">
+                  <span class="tech-pill">React</span
+                  ><span class="tech-pill">Zustand</span
+                  ><span class="tech-pill">shadcn/ui</span>
+                </div>
+                <p class="project-context">
+                  <strong>Na implementação:</strong> interface voltada ao
+                  celular, persistência local e relatório da sessão atual em
+                  Markdown.
+                </p>
+                <div class="project-links">
+                  <a
+                    href="https://github.com/gafanhotoalexandre/recovery-fit"
+                    aria-label="Ver o código de RecoveryFit no GitHub"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Ver código <span aria-hidden="true">↗</span></a
+                  >
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section
+        id="stack"
+        class="content-section section-rule"
+        aria-labelledby="stack-title"
+      >
+        <div class="container-custom section-layout">
+          <div class="reveal">
+            <p class="section-kicker mono mb-5">04 / TECNOLOGIAS</p>
+            <h2 id="stack-title" class="section-title">
+              Com o que<br /><span class="serif italic" style="font-weight: 400"
+                >trabalho.</span
+              >
+            </h2>
+            <p class="section-intro">
+              C#/.NET é minha principal afinidade. Uso outras ferramentas
+              conforme as necessidades dos sistemas e dos projetos pessoais.
+            </p>
+          </div>
+          <div class="technology-list reveal">
+            <div class="technology-row">
+              <h3>Backend</h3>
+              <p>
+                <strong>C# / .NET · ASP.NET Core</strong><br />EF Core · APIs
+                REST
+              </p>
+            </div>
+            <div class="technology-row">
+              <h3>Interfaces</h3>
+              <p>Angular · React · TypeScript<br />Tailwind CSS</p>
+            </div>
+            <div class="technology-row">
+              <h3>Dados e<br />ferramentas</h3>
+              <p>
+                SQL · PostgreSQL · Supabase<br />Git · Docker · Azure DevOps
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        id="contato"
+        class="contact-section"
+        aria-labelledby="contact-title"
+      >
+        <div class="container-custom relative z-10">
+          <p class="mono eyebrow mb-6">05 / CONTATO</p>
+          <h2 id="contact-title" class="contact-title">
+            Vamos<br /><span class="serif italic" style="font-weight: 400"
+              >conversar.</span
+            >
+          </h2>
+          <p class="contact-description">
+            Para conversar sobre trabalho, projetos ou alguma ideia, você pode
+            me escrever ou encontrar meus perfis por aqui.
+          </p>
+          <div class="contact-actions">
+            <a
+              id="emailLink"
+              class="contact-link"
+              href="mailto:alexandrevmartinsdelima@gmail.com"
+              >alexandrevmartinsdelima@gmail.com
+              <span aria-hidden="true">↗</span></a
+            ><a
+              class="contact-link"
+              href="https://www.linkedin.com/in/alemartins-lima/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >LinkedIn <span aria-hidden="true">↗</span></a
+            ><a
+              class="contact-link"
+              href="https://github.com/gafanhotoalexandre"
+              target="_blank"
+              rel="noopener noreferrer"
+              >GitHub <span aria-hidden="true">↗</span></a
+            ><button id="copyEmail" hidden class="contact-copy" type="button">
+              Copiar e-mail <span aria-hidden="true">⧉</span>
+            </button>
+          </div>
+          <p
+            id="copyStatus"
+            class="copy-status"
+            role="status"
+            aria-live="polite"
+          ></p>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="container-custom footer-inner mono">
+        <span>© <span id="year">2026</span> Alexandre Martins.</span
+        ><span>JUAZEIRO DO NORTE · CEARÁ</span
+        ><a href="#inicio"
+          >Voltar ao início <span aria-hidden="true">↑</span></a
+        >
+      </div>
+    </footer>
+
+    <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
