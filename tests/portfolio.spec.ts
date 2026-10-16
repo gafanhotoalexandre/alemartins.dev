@@ -228,7 +228,7 @@ test("search and social metadata and static resources", async ({
 }) => {
   await page.goto("/");
   await expect(page).toHaveTitle(
-    "Alexandre Martins — Desenvolvedor de software",
+    "Alexandre Martins - Desenvolvedor de software",
   );
   await expect(page.locator("h1")).toHaveCount(1);
   await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
