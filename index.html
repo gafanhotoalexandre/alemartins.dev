@@ -530,81 +530,31 @@
               <div
                 class="project-art"
                 role="img"
-                aria-label="Ilustração conceitual do projeto, com dados fictícios"
+                aria-label="Ilustração conceitual do Paralelo: dois JSONs com uma mudança de tipo e uma propriedade adicionada, usando dados fictícios"
                 style="background: #bfd6ce; color: #194c3c"
               >
                 <span class="art-disclaimer mono"
                   >Ilustração · dados fictícios</span
-                ><span class="art-label mono">03 / INTERFACE WEB</span>
-                <div class="fitness-window">
-                  <div class="flex justify-between items-center">
-                    <span
-                      style="
-                        font-weight: 800;
-                        font-size: 18px;
-                        letter-spacing: -0.04em;
-                      "
-                      >recovery<span style="color: #367653">fit</span></span
-                    ><span class="mono" style="font-size: 10px">◉</span>
+                >
+                <span class="art-label mono">03 / FERRAMENTA WEB</span>
+                <div class="diff-window" aria-hidden="true">
+                  <div class="diff-window-header">
+                    <span>paralelo</span><span class="mono">2 diferenças</span>
                   </div>
-                  <div
-                    class="mt-7 mono"
-                    style="font-size: 10px; color: #4f6c5b"
-                  >
-                    TREINO DE HOJE
-                  </div>
-                  <div class="text-[30px] font-bold tracking-[-.06em] mt-1">
-                    3 de 4
-                    <span style="font-weight: 400; font-size: 13px"
-                      >séries</span
-                    >
-                  </div>
-                  <div class="fitness-progress mt-3"><div></div></div>
-                  <div class="flex gap-2 mt-5">
-                    <div
-                      style="
-                        background: #e0eadd;
-                        border: 1px solid #c4d6be;
-                        border-radius: 9px;
-                        padding: 12px;
-                        flex: 1;
-                      "
-                    >
-                      <div class="mono" style="font-size: 9px; color: #4b6655">
-                        SEG
-                      </div>
-                      <strong style="font-size: 12px">Upper</strong>
-                      <div style="color: #2d6857">✓</div>
+                  <div class="diff-panes mono">
+                    <div class="diff-pane">
+                      <div class="diff-pane-label">Original</div>
+                      <pre>{
+  "id": 42,
+<span class="diff-before">  "ativo": true</span>}
+</pre>
                     </div>
-                    <div
-                      style="
-                        background: #e0eadd;
-                        border: 1px solid #c4d6be;
-                        border-radius: 9px;
-                        padding: 12px;
-                        flex: 1;
-                      "
-                    >
-                      <div class="mono" style="font-size: 9px; color: #4b6655">
-                        TER
-                      </div>
-                      <strong style="font-size: 12px">Lower</strong>
-                      <div style="color: #2d6857">✓</div>
-                    </div>
-                    <div
-                      style="
-                        background: #e0eadd;
-                        border: 1px solid #c4d6be;
-                        border-radius: 9px;
-                        padding: 12px;
-                        flex: 1;
-                      "
-                    >
-                      <div class="mono" style="font-size: 9px; color: #4b6655">
-                        QUA
-                      </div>
-                      <strong style="font-size: 12px">Rest</strong>
-                      <div style="color: #2d6857">✓</div>
+                    <div class="diff-pane">
+                      <div class="diff-pane-label">Atualizado</div>
+                      <pre>{
+  "id": 42,
+<span class="diff-after">  "ativo": "sim",</span><span class="diff-after">  "papel": "dev"</span>}
+</pre>
                     </div>
                   </div>
                 </div>
@@ -615,39 +565,41 @@
                     <p class="section-kicker mono mb-3" style="font-size: 10px">
                       FRONTEND / PROJETO PESSOAL
                     </p>
-                    <h3 class="project-title">RecoveryFit</h3>
+                    <h3 class="project-title">Paralelo</h3>
                   </div>
                   <a
                     class="card-arrow"
-                    href="https://github.com/gafanhotoalexandre/recovery-fit"
+                    href="https://paralelo.alemartins.dev.br/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label="Ver o código de RecoveryFit no GitHub"
+                    aria-label="Abrir a aplicação Paralelo"
                     >↗</a
                   >
                 </div>
                 <p class="project-desc mt-3 mb-5">
-                  Diário de treinos para registrar séries e acompanhar a
-                  recuperação. Os dados ficam no navegador, com geração e cópia
-                  de um relatório Markdown da sessão atual.
+                  Uma ferramenta para comparar JSONs, identificar diferenças
+                  estruturais e de conteúdo e navegar pelos trechos alterados. O
+                  processamento acontece inteiramente no navegador.
                 </p>
                 <div class="flex flex-wrap gap-2">
-                  <span class="tech-pill">React</span
-                  ><span class="tech-pill">Zustand</span
-                  ><span class="tech-pill">shadcn/ui</span>
+                  <span class="tech-pill">React</span>
+                  <span class="tech-pill">TypeScript</span>
+                  <span class="tech-pill">CodeMirror</span>
                 </div>
-                <p class="project-context">
-                  <strong>Na implementação:</strong> interface voltada ao
-                  celular, persistência local e relatório da sessão atual em
-                  Markdown.
-                </p>
                 <div class="project-links">
                   <a
-                    href="https://github.com/gafanhotoalexandre/recovery-fit"
-                    aria-label="Ver o código de RecoveryFit no GitHub"
+                    href="https://paralelo.alemartins.dev.br/"
+                    aria-label="Abrir a aplicação Paralelo"
                     target="_blank"
                     rel="noopener noreferrer"
-                    >Ver código <span aria-hidden="true">↗</span></a
+                    >Aplicação <span aria-hidden="true">↗</span></a
+                  >
+                  <a
+                    href="https://github.com/gafanhotoalexandre/paralelo-app"
+                    aria-label="Ver o código-fonte de Paralelo no GitHub"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Ver código<span aria-hidden="true">↗</span></a
                   >
                 </div>
               </div>

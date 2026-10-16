@@ -59,6 +59,8 @@ Há um pequeno JavaScript no `<head>` do HTML de propósito: ele escolhe o tema 
 | `sitemap.xml` | Lista a URL canônica do site; âncoras das seções não são páginas separadas. |
 | `font-licenses/` | Licenças de redistribuição das fontes usadas no site. |
 
+O favicon usa os glifos de DM Sans no peso 800, como a marca `a.` do cabeçalho, convertidos em curvas SVG. Assim, sua aparência não depende de uma fonte instalada no dispositivo. A licença de DM Sans também cobre esse uso.
+
 Os WOFF2 das fontes vêm dos pacotes Fontsource instalados pelo npm. O CSS aponta para esses arquivos, e o Vite os coloca em `dist/assets/`. O visitante baixa as fontes da própria hospedagem do portfólio; não acessa Google Fonts ou npm.
 
 ### Ferramentas e configurações

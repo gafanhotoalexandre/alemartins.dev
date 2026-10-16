@@ -332,17 +332,6 @@ a:focus-visible {
 .finance-bars div:nth-child(2n) {
   background: #8eaa8d;
 }
-.fitness-progress {
-  height: 7px;
-  border-radius: 99px;
-  background: #d8e4d2;
-  overflow: hidden;
-}
-.fitness-progress div {
-  height: 100%;
-  width: 74%;
-  background: #2d6857;
-}
 .tech-pill {
   font:
     10px "DM Mono",
@@ -763,19 +752,68 @@ section[id] {
   padding: 4px 7px;
   letter-spacing: 0.015em;
 }
-.fitness-window {
+.diff-window {
   position: absolute;
   left: 7%;
   right: 7%;
   top: 49px;
-  bottom: -20px;
-  background: #f6f6e9;
-  border: 1px solid #becdb7;
-  border-radius: 17px 17px 0 0;
+  background: #f7faf5;
+  border: 1px solid #a8beb2;
+  border-radius: 4px;
   box-shadow: 14px 15px 0 #739a8f;
   transform: rotate(-4deg);
   color: #204438;
-  padding: 23px;
+  padding: 16px;
+}
+.diff-window-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 800;
+}
+.diff-window-header .mono {
+  font-size: 8px;
+  font-weight: 400;
+}
+.diff-panes {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 15px;
+  border: 1px solid #c8d7ce;
+  font-size: 9px;
+  line-height: 1.9;
+}
+.diff-pane {
+  min-width: 0;
+  overflow: hidden;
+}
+.diff-pane + .diff-pane {
+  border-left: 1px solid #c8d7ce;
+}
+.diff-pane-label {
+  padding: 4px 9px;
+  background: #e8efe8;
+  border-bottom: 1px solid #c8d7ce;
+}
+.diff-pane pre {
+  padding: 9px;
+  font: inherit;
+}
+.diff-before,
+.diff-after {
+  display: block;
+  margin-inline: -9px;
+  padding-inline: 9px;
+}
+.diff-before {
+  background: #f3e2d8;
+  color: #79432f;
+}
+.diff-after {
+  background: #dcebdd;
+  color: #28563e;
 }
 .finance-window {
   width: 85%;
